@@ -868,9 +868,42 @@ input, select {
   color: var(--text-tertiary);
 }
 
+/* ===== FAB & Overlay (mobile drawer) ===== */
+.fab-menu {
+  display: none;
+  position: fixed;
+  bottom: 24px;
+  right: 20px;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  box-shadow: var(--shadow-lg);
+  z-index: 200;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+.fab-menu:hover { background: var(--accent-hover); transform: scale(1.05); }
+.fab-menu svg { width: 22px; height: 22px; }
+
+.sidebar-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  z-index: 150;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.sidebar-overlay.visible { display: block; opacity: 1; }
+
 /* ===== Responsive ===== */
 
-/* Tablet: 960px and below — single column, sidebar collapses */
+/* Tablet: 960px and below — single column, sidebar compact */
 @media (max-width: 960px) {
   .main-grid {
     grid-template-columns: 1fr;
@@ -890,7 +923,7 @@ input, select {
   }
 }
 
-/* Large phone: 768px and below */
+/* Large phone: 768px and below — sidebar as drawer, FAB visible */
 @media (max-width: 768px) {
   .container {
     padding: 0 14px;
@@ -934,7 +967,6 @@ input, select {
     height: 16px;
   }
 
-  /* Date nav: compact */
   .date-nav {
     padding: 6px 0;
   }
@@ -949,7 +981,6 @@ input, select {
     font-size: 11px;
   }
 
-  /* Filter bar: stacked layout */
   .filter-bar {
     padding: 10px 0;
   }
@@ -984,7 +1015,6 @@ input, select {
     justify-content: flex-end;
   }
 
-  /* Main content */
   .main-content {
     padding: 16px 0 32px;
   }
@@ -998,7 +1028,6 @@ input, select {
     font-size: 17px;
   }
 
-  /* News cards: full-bleed feel */
   .news-list {
     gap: 1px;
   }
@@ -1034,15 +1063,36 @@ input, select {
     font-size: 13px;
   }
 
-  /* Sidebar: collapsible-ish */
+  /* Sidebar becomes off-canvas drawer from right */
   .sidebar {
+    position: fixed;
+    top: 0;
+    right: -320px;
+    width: 300px;
+    max-width: 85vw;
+    height: 100vh;
+    height: 100dvh;
+    background: var(--bg-secondary);
+    z-index: 180;
     flex-direction: column;
-    gap: 14px;
+    gap: 0;
+    padding: 60px 16px 80px;
+    overflow-y: auto;
+    transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: -4px 0 24px rgba(0,0,0,0.15);
   }
 
+  .sidebar.open { right: 0; }
+
   .sidebar-section {
-    padding: 14px;
+    flex: none;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border-light);
+    border-radius: 0;
+    background: transparent;
   }
+
+  .sidebar-section:last-child { border-bottom: none; }
 
   .sidebar-title {
     font-size: 13px;
@@ -1050,10 +1100,11 @@ input, select {
   }
 
   .archive-list {
-    max-height: 160px;
+    max-height: 200px;
   }
 
-  /* Footer */
+  .fab-menu { display: flex; }
+
   .footer-inner {
     font-size: 11px;
   }
