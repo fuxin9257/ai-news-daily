@@ -21,7 +21,12 @@ window.NEWS_DATA['2026-09-09'] = {
         "url": "https://stanfordtechreview.com/articles/ai-news-this-week-gpt-6-astra-iphone-duo-funding",
         "source": "Stanford Tech Review",
         "category": "funding",
-        "tags": ["Harvey", "法律AI", "融资", "垂直应用"],
+        "tags": [
+            "Harvey",
+            "法律AI",
+            "融资",
+            "垂直应用"
+        ],
         "heat": 4,
         "date": "2026-09-09"
     },
@@ -33,19 +38,29 @@ window.NEWS_DATA['2026-09-09'] = {
         "url": "https://stanfordtechreview.com/articles/ai-news-this-week-gpt-6-astra-iphone-duo-funding",
         "source": "Stanford Tech Review",
         "category": "product_release",
-        "tags": ["Apple", "iPhone Duo", "折叠屏", "Apple Intelligence"],
+        "tags": [
+            "Apple",
+            "iPhone Duo",
+            "折叠屏",
+            "Apple Intelligence"
+        ],
         "heat": 5,
         "date": "2026-09-09"
     },
     {
         "id": "3",
-        "title": "Anthropic研究员Jacob Coxon辞职并发文警告：实验室在拿我们的生命赌博",
+        "title": "Anthropic研究员Jacob Coxon辞职并发文警告：实验室在\"拿我们的生命赌博\"",
         "summary": "27岁的Anthropic研究员Jacob Coxon辞职，发布七部分警告称AI实验室正在冲向自我改进的超级智能，一夜获7600万浏览。",
-        "detail": "27岁的Anthropic研究员Jacob Coxon——曾在OpenAI做了三年预训练研究，后加入Anthropic——于9月9日辞职，并发布了一系列七部分的警告文章，一夜之间获得近7600万浏览。Coxon告诉《华尔街日报》和TechCrunch，AI实验室正在径直冲向自我改进的超级智能，拿我们的生命赌博，并称同事们现在随意使用决战时刻和终局这样的词。Anthropic对齐负责人Evan Hubinger公开表示Coxon是正确的。这一事件成为AI安全讨论中观看量最高的行业内部人士发声，引发了公众对AI安全问题的广泛关注。",
+        "detail": "27岁的Anthropic研究员Jacob Coxon——曾在OpenAI做了三年预训练研究，后加入Anthropic——于9月9日辞职，并发布了一系列七部分的警告文章，一夜之间获得近7600万浏览。Coxon告诉《华尔街日报》和TechCrunch，AI实验室正在\"径直冲向自我改进的超级智能，拿我们的生命赌博\"，并称同事们现在随意使用\"决战时刻\"(crunchtime)和\"终局\"(endgame)这样的词。Anthropic对齐负责人Evan Hubinger公开表示Coxon是正确的。这一事件成为AI安全讨论中观看量最高的行业内部人士发声，引发了公众对AI安全问题的广泛关注。",
         "url": "https://stanfordtechreview.com/articles/ai-news-this-week-gpt-6-astra-iphone-duo-funding",
         "source": "Stanford Tech Review / WSJ",
         "category": "community_hot",
-        "tags": ["Anthropic", "AI安全", "辞职警告", "Jacob Coxon"],
+        "tags": [
+            "Anthropic",
+            "AI安全",
+            "辞职警告",
+            "Jacob Coxon"
+        ],
         "heat": 5,
         "date": "2026-09-09"
     },
@@ -53,11 +68,16 @@ window.NEWS_DATA['2026-09-09'] = {
         "id": "4",
         "title": "蚂蚁集团开源Ling-3.0-flash-VL原生多模态模型，首创视觉反馈闭环机制",
         "summary": "蚂蚁集团发布并开源百灵系列首个原生多模态大模型Ling-3.0-flash-VL，总参数124B，单次推理仅激活5.5B。",
-        "detail": "蚂蚁集团于9月9日正式发布并开源百灵系列首个原生多模态大模型Ling-3.0-flash-VL。模型总参数124B，采用MoE架构，单次推理仅激活5.5B参数；原生支持图像、文本与视频输入，上下文窗口达256K Token。其核心创新为视觉反馈闭环机制，可实现观察到行动到验证到修正的任务闭环，将传统一次性生成升级为持续迭代执行模式。机器之心评价，原生多模态模型突破一次性生成局限，闭环执行能力为AI走进物理场景打下基础。这一模型的开源将推动多模态AI Agent的发展，特别是在需要视觉反馈的场景如机器人控制、工业检测等领域。",
+        "detail": "蚂蚁集团于9月9日正式发布并开源百灵系列首个原生多模态大模型Ling-3.0-flash-VL。模型总参数124B，采用MoE架构，单次推理仅激活5.5B参数；原生支持图像、文本与视频输入，上下文窗口达256K Token。其核心创新为视觉反馈闭环机制，可实现\"观察→行动→验证→修正\"的任务闭环，将传统一次性生成升级为持续迭代执行模式。机器之心评价，原生多模态模型突破一次性生成局限，闭环执行能力为AI走进物理场景打下基础。这一模型的开源将推动多模态AI Agent的发展，特别是在需要视觉反馈的场景如机器人控制、工业检测等领域。",
         "url": "https://blog.csdn.net/yuntongliangda/article/details/165194345",
         "source": "CSDN / 机器之心",
         "category": "opensource",
-        "tags": ["蚂蚁集团", "多模态", "开源", "Ling-3.0"],
+        "tags": [
+            "蚂蚁集团",
+            "多模态",
+            "开源",
+            "Ling-3.0"
+        ],
         "heat": 4,
         "date": "2026-09-09"
     },
@@ -65,11 +85,16 @@ window.NEWS_DATA['2026-09-09'] = {
         "id": "5",
         "title": "特斯联发布ThiCP异构算力调度平台，大模型推理成本降低50%-70%",
         "summary": "特斯联发布ThiCP异构算力调度平台，通过算力按需匹配和任务精细化调度，将大模型整体推理成本降低50%-70%。",
-        "detail": "特斯联于9月9日发布ThiCP异构算力调度平台，通过算力按需匹配、任务精细化调度，将大模型整体推理成本降低50%-70%。该平台支持多种芯片架构的统一调度，可根据任务的实时需求动态分配最优算力资源。同日，DeepSeek宣布自9月10日起调整Flash系列API定价：空闲时段输入缓存命中单价低至0.02元每千token，未命中单价1元每千token，价差最高达50倍，正式引入高峰空闲差异化计费模式。业内分析指出，国产算力调度与模型定价同步发力，AI应用的算力成本正在快速下探。",
+        "detail": "特斯联于9月9日发布ThiCP异构算力调度平台，通过算力按需匹配、任务精细化调度，将大模型整体推理成本降低50%-70%。该平台支持多种芯片架构的统一调度，可根据任务的实时需求动态分配最优算力资源。同日，DeepSeek宣布自9月10日起调整Flash系列API定价：空闲时段输入缓存命中单价低至0.02元/千token，未命中单价1元/千token，价差最高达50倍，正式引入高峰/空闲差异化计费模式。业内分析指出，国产算力调度与模型定价同步发力，AI应用的算力成本正在快速下探。算力调度优化加差异化定价，双管齐下推动AI推理成本进入下降通道。",
         "url": "https://blog.csdn.net/yuntongliangda/article/details/165194345",
         "source": "CSDN",
         "category": "product_release",
-        "tags": ["特斯联", "算力调度", "DeepSeek", "成本优化"],
+        "tags": [
+            "特斯联",
+            "算力调度",
+            "DeepSeek",
+            "成本优化"
+        ],
         "heat": 3,
         "date": "2026-09-09"
     },
@@ -77,11 +102,16 @@ window.NEWS_DATA['2026-09-09'] = {
         "id": "6",
         "title": "AI安全研究员警告：AI误用正从提示级协助转向Agent级自主执行",
         "summary": "在研究员辞职警告引发广泛关注后，多位AI安全专家指出，AI误用正在从模型提供建议转向模型自主执行整个操作。",
-        "detail": "在Anthropic研究员Jacob Coxon辞职并发布病毒式警告后，多位AI安全专家在随后几天的讨论中指出，AI误用的性质正在发生根本性变化——从早期的模型帮助用户完成恶意行为转向模型自主执行整个恶意操作。专家表示，随着AI Agent能力的提升，恶意用户不需要自己具备技术能力，只需向Agent描述目标，模型就会自主规划和执行整个操作链。这一转变使得AI安全防护变得更加困难——传统的内容过滤方法在Agent场景中效果有限。安全专家呼吁建立新的Agent安全框架，包括行为监控、操作限制和人工确认机制。",
+        "detail": "在Anthropic研究员Jacob Coxon辞职并发布病毒式警告后，多位AI安全专家在随后几天的讨论中指出，AI误用的性质正在发生根本性变化——从早期的\"模型帮助用户完成恶意行为\"转向\"模型自主执行整个恶意操作\"。专家表示，随着AI Agent能力的提升，恶意用户不需要自己具备技术能力，只需向Agent描述目标，模型就会自主规划和执行整个操作链。这一转变使得AI安全防护变得更加困难——传统的内容过滤方法在Agent场景中效果有限。安全专家呼吁建立新的Agent安全框架，包括行为监控、操作限制和人工确认机制。这一讨论与Anthropic即将发布的威胁情报报告形成呼应。",
         "url": "https://stanfordtechreview.com/articles/ai-news-this-week-gpt-6-astra-iphone-duo-funding",
         "source": "Stanford Tech Review",
         "category": "community_hot",
-        "tags": ["AI安全", "AI误用", "Agent安全", "安全研究"],
+        "tags": [
+            "AI安全",
+            "AI误用",
+            "Agent安全",
+            "安全研究"
+        ],
         "heat": 4,
         "date": "2026-09-09"
     }

@@ -6,13 +6,114 @@ window.NEWS_DATA['2026-09-10'] = {
   "date": "2026-09-10",
   "generated_at": "2026-09-22T17:23:23+08:00",
   "total_count": 6,
-  "categories": {"product_release": 4, "regulation": 2},
+  "categories": {
+  "product_release": 4,
+  "regulation": 2
+},
   "items": [
-    {"id": "1", "title": "DeepSeek发布V4.1-Flash：552B MoE模型，缓存输入仅$0.003/百万token", "summary": "DeepSeek发布V4.1-Flash开源模型，552B参数MoE架构，仅激活8B参数，Terminal-Bench 2.1得分90.6，价格低至GPT-6 Astra的三万分之一。", "detail": "DeepSeek于9月10日发布V4.1-Flash，一个5520亿参数的混合专家模型，在提示处理时仅激活80亿参数，生成时激活160亿参数。第三方测试显示，这个开源权重模型在性能、成本和速度上都超过了DeepSeek自己的旗舰V4-Pro，在Terminal-Bench 2.1上得分90.6。最引人注目的是价格：非高峰时段缓存输入成本仅为每百万token 0.003美元，而GPT-6 Astra的输入价格是每百万token 10美元，价格差距超过三个数量级。DeepSeek同时推出峰谷差异化定价，空闲时段价格最低至0.02元每千token，高峰与空闲价差最高达50倍。", "url": "https://stanfordtechreview.com/articles/ai-news-this-week-gpt-6-astra-iphone-duo-funding", "source": "Stanford Tech Review", "category": "product_release", "tags": ["DeepSeek", "V4.1-Flash", "MoE", "开源模型", "价格战"], "heat": 5, "date": "2026-09-10"},
-    {"id": "2", "title": "Anthropic发布9月威胁情报报告：记录七类AI滥用案例", "summary": "Anthropic发布威胁情报报告，记录2025年12月至2026年8月间阻止的七类AI滥用，包括俄罗斯关联间谍活动和孟加拉国虚假新闻行动。", "detail": "Anthropic于9月10日发布其2026年9月威胁情报报告，记录了2025年12月至2026年8月间其阻止的跨七个危害领域的AI滥用案例。报告内容包括：与俄罗斯有关联的间谍活动、孟加拉国的自动化假新闻行动、用于识别异见人士的监控系统，以及试图利用Claude进行涉及病毒和毒素研究的尝试。报告的核心发现是：AI滥用正在从提示级协助转向Agent级执行，模型不再仅仅为用户提供建议，而是自主运行整个操作。这份报告是AI安全领域最详细的公开滥用案例集之一。", "url": "https://stanfordtechreview.com/articles/ai-news-this-week-gpt-6-astra-iphone-duo-funding", "source": "Stanford Tech Review / Anthropic", "category": "regulation", "tags": ["Anthropic", "威胁情报", "AI安全", "滥用报告"], "heat": 4, "date": "2026-09-10"},
-    {"id": "3", "title": "Nvidia与Palantir达成战略合作，部署主权AI供应链堆栈", "summary": "Nvidia与Palantir宣布战略合作，将Nemotron开源模型与Foundry平台深度整合，率先在Nvidia自身供应链中落地。", "detail": "Nvidia与Palantir于9月10日宣布达成战略合作，将Nvidia的Nemotron开源模型与Palantir的Foundry、AIP、Ontology平台深度整合，率先在Nvidia自身供应链体系中落地部署。该方案覆盖每个Vera Rubin机架约130万个零部件，涉及数百万组件与数千家供应商，通过AI实现供应链全链路智能调度与风险预警。Nvidia CEO黄仁勋表示，供应链是实体经济的操作系统。彭博社评论认为，AI正从数字服务场景深入实体经济核心环节，主权级AI供应链成为产业新赛道。", "url": "https://blog.csdn.net/yuntongliangda/article/details/165194345", "source": "CSDN / 彭博社", "category": "product_release", "tags": ["Nvidia", "Palantir", "供应链", "实体经济"], "heat": 4, "date": "2026-09-10"},
-    {"id": "4", "title": "白宫AI安全框架透明度争议升级，20+跨党派组织联名要求公开", "summary": "据CBS News报道，白宫自愿性AI测试框架内容秘而不宣，超过20个跨党派组织联名致信要求公开完整内容。", "detail": "据CBS News 9月10日报道，白宫已于8月初完成自愿性前沿AI模型测试框架，但至今未向公众公开完整内容。超过20个跨党派组织联名致信白宫，要求公开框架的测试标准、评估流程与豁免范围。据披露，该框架将开源权重模型排除在审查范围外，仅要求闭源前沿模型厂商自愿送测。OpenAI CEO奥尔特曼确认已提交GPT-6 Astra参与测试，但评审结果无需对外公开。The Verge指出，美国自愿性AI治理模式缺乏公开监督，其公正性与有效性引发行业广泛质疑。", "url": "https://blog.csdn.net/yuntongliangda/article/details/165194345", "source": "CSDN / CBS News / The Verge", "category": "regulation", "tags": ["白宫", "AI监管", "透明度", "AI安全框架"], "heat": 4, "date": "2026-09-10"},
-    {"id": "5", "title": "AI办公Agent大战升温：腾讯WorkBuddy、科大讯飞Loomy、字节豆包工作集中升级", "summary": "9月10日成为国内AI办公Agent集中发布节点，腾讯、科大讯飞、字节跳动同日发布或升级各自的办公智能体产品。", "detail": "9月10日成为国内AI办公Agent集中发布节点。腾讯WorkBuddy上线半年完成50余个版本迭代，新增人机双写、AI原生资料库、安全中心等能力，8月已打通企业微信；腾讯乐享同步上线知识图谱、长期记忆、AI同事、AI知识巡检等七项新能力。科大讯飞AI工作搭子Loomy迎来年度重磅版本升级，强化复杂任务编排与多系统联动能力。字节跳动豆包工作同日引发行业广泛讨论，办公智能体赛道竞争进入白热化。界面新闻分析认为，大厂密集押注AI办公入口，办公场景成为大模型C端与B端落地的核心战场。", "url": "https://blog.csdn.net/yuntongliangda/article/details/165194345", "source": "CSDN / 界面新闻", "category": "product_release", "tags": ["腾讯", "科大讯飞", "字节跳动", "AI办公", "智能体"], "heat": 4, "date": "2026-09-10"},
-    {"id": "6", "title": "ChatSlide 3.0发布：支持引用保留的AI演示文稿生成", "summary": "AI演示文稿工具ChatSlide发布3.0版本，核心功能是生成幻灯片时自动保留原文中的引用和来源信息。", "detail": "ChatSlide于9月10日发布3.0版本，主要面向研究人员和教育工作者。其核心功能是引用保留的幻灯片生成，用户上传的文档中的来源和引用信息会自动保留到生成的演示文稿中，而不是被剥离掉。这一功能对学术用户特别重要，因为之前的AI幻灯片生成工具往往会忽略引用信息，导致生成的演示文稿无法用于正式学术场合。这虽然是一个相对小的版本更新，但它指出了AI应用层真正创造价值的方向，在前沿实验室争论AGI的时候，应用层公司正在解决真实用户的真实痛点。", "url": "https://stanfordtechreview.com/articles/ai-news-this-week-gpt-6-astra-iphone-duo-funding", "source": "Stanford Tech Review", "category": "product_release", "tags": ["ChatSlide", "演示文稿", "AI工具", "学术应用"], "heat": 2, "date": "2026-09-10"}
+    {
+        "id": "1",
+        "title": "DeepSeek发布V4.1-Flash：552B MoE模型，缓存输入仅$0.003/百万token",
+        "summary": "DeepSeek发布V4.1-Flash开源模型，552B参数MoE架构，仅激活8B参数，Terminal-Bench 2.1得分90.6，价格低至GPT-6 Astra的三万分之一。",
+        "detail": "DeepSeek于9月10日发布V4.1-Flash，一个5520亿参数的混合专家模型，在提示处理时仅激活80亿参数，生成时激活160亿参数。第三方测试显示，这个开源权重模型在性能、成本和速度上都超过了DeepSeek自己的旗舰V4-Pro，在Terminal-Bench 2.1上得分90.6。最引人注目的是价格：非高峰时段缓存输入成本仅为每百万token 0.003美元——即千分之三美元，而GPT-6 Astra的输入价格是每百万token 10美元。这两个模型之间的价格差距超过三个数量级。DeepSeek同时推出峰谷差异化定价，空闲时段价格最低至0.02元/千token，高峰与空闲价差最高达50倍。",
+        "url": "https://stanfordtechreview.com/articles/ai-news-this-week-gpt-6-astra-iphone-duo-funding",
+        "source": "Stanford Tech Review",
+        "category": "product_release",
+        "tags": [
+            "DeepSeek",
+            "V4.1-Flash",
+            "MoE",
+            "开源模型",
+            "价格战"
+        ],
+        "heat": 5,
+        "date": "2026-09-10"
+    },
+    {
+        "id": "2",
+        "title": "Anthropic发布9月威胁情报报告：记录七类AI滥用案例",
+        "summary": "Anthropic发布威胁情报报告，记录2025年12月至2026年8月间阻止的七类AI滥用，包括俄罗斯关联间谍活动和孟加拉国虚假新闻行动。",
+        "detail": "Anthropic于9月10日发布其2026年9月威胁情报报告，记录了2025年12月至2026年8月间其阻止的跨七个危害领域的AI滥用案例。报告内容包括：与俄罗斯有关联的间谍活动、孟加拉国的自动化假新闻行动、用于识别异见人士的监控系统，以及试图利用Claude进行涉及病毒和毒素研究的尝试。报告的核心发现是：AI滥用正在从提示级协助转向Agent级执行——模型不再仅仅为用户提供建议，而是自主运行整个操作。这份报告是AI安全领域最详细的公开滥用案例集之一，为政策制定者和安全研究人员提供了宝贵的数据。",
+        "url": "https://stanfordtechreview.com/articles/ai-news-this-week-gpt-6-astra-iphone-duo-funding",
+        "source": "Stanford Tech Review / Anthropic",
+        "category": "regulation",
+        "tags": [
+            "Anthropic",
+            "威胁情报",
+            "AI安全",
+            "滥用报告"
+        ],
+        "heat": 4,
+        "date": "2026-09-10"
+    },
+    {
+        "id": "3",
+        "title": "Nvidia与Palantir达成战略合作，部署主权AI供应链堆栈",
+        "summary": "Nvidia与Palantir宣布战略合作，将Nemotron开源模型与Foundry平台深度整合，率先在Nvidia自身供应链中落地。",
+        "detail": "Nvidia与Palantir于9月10日宣布达成战略合作，将Nvidia的Nemotron开源模型与Palantir的Foundry、AIP、Ontology平台深度整合，率先在Nvidia自身供应链体系中落地部署。该方案覆盖每个Vera Rubin机架约130万个零部件，涉及数百万组件与数千家供应商，通过AI实现供应链全链路智能调度与风险预警。Nvidia CEO黄仁勋表示，\"供应链是实体经济的操作系统\"。彭博社评论认为，AI正从数字服务场景深入实体经济核心环节，主权级AI供应链成为产业新赛道。算力龙头联手工业软件厂商，开始用大模型重构万亿级实体经济体系。",
+        "url": "https://blog.csdn.net/yuntongliangda/article/details/165194345",
+        "source": "CSDN / 彭博社",
+        "category": "product_release",
+        "tags": [
+            "Nvidia",
+            "Palantir",
+            "供应链",
+            "实体经济"
+        ],
+        "heat": 4,
+        "date": "2026-09-10"
+    },
+    {
+        "id": "4",
+        "title": "白宫AI安全框架透明度争议升级，20+跨党派组织联名要求公开",
+        "summary": "据CBS News报道，白宫自愿性AI测试框架内容秘而不宣，超过20个跨党派组织联名致信要求公开完整内容。",
+        "detail": "据CBS News 9月10日报道，白宫已于8月初完成自愿性前沿AI模型测试框架，但至今未向公众公开完整内容。超过20个跨党派组织联名致信白宫，要求公开框架的测试标准、评估流程与豁免范围。据披露，该框架将开源权重模型排除在审查范围外，仅要求闭源前沿模型厂商自愿送测。OpenAI CEO奥尔特曼确认已提交GPT-6 Astra参与测试，但评审结果无需对外公开。The Verge指出，美国自愿性AI治理模式缺乏公开监督，其公正性与有效性引发行业广泛质疑。不透明的自愿框架难以形成有效约束，AI治理的公信力仍待提升。",
+        "url": "https://blog.csdn.net/yuntongliangda/article/details/165194345",
+        "source": "CSDN / CBS News / The Verge",
+        "category": "regulation",
+        "tags": [
+            "白宫",
+            "AI监管",
+            "透明度",
+            "AI安全框架"
+        ],
+        "heat": 4,
+        "date": "2026-09-10"
+    },
+    {
+        "id": "5",
+        "title": "AI办公Agent大战升温：腾讯WorkBuddy、科大讯飞Loomy、字节豆包工作集中升级",
+        "summary": "9月10日成为国内AI办公Agent集中发布节点，腾讯、科大讯飞、字节跳动同日发布或升级各自的办公智能体产品。",
+        "detail": "9月10日成为国内AI办公Agent集中发布节点。腾讯WorkBuddy上线半年完成50余个版本迭代，新增\"人机双写\"、AI原生资料库、安全中心等能力，8月已打通企业微信；腾讯乐享同步上线知识图谱、长期记忆、AI同事、AI知识巡检等七项新能力。科大讯飞AI工作搭子Loomy迎来年度重磅版本升级，强化复杂任务编排与多系统联动能力。字节跳动\"豆包工作\"同日引发行业广泛讨论，办公智能体赛道竞争进入白热化。界面新闻分析认为，大厂密集押注AI办公入口，办公场景成为大模型C端与B端落地的核心战场。AI办公正在从单点工具升级为智能工作助手，入口之争决定未来生态地位。",
+        "url": "https://blog.csdn.net/yuntongliangda/article/details/165194345",
+        "source": "CSDN / 界面新闻",
+        "category": "product_release",
+        "tags": [
+            "腾讯",
+            "科大讯飞",
+            "字节跳动",
+            "AI办公",
+            "智能体"
+        ],
+        "heat": 4,
+        "date": "2026-09-10"
+    },
+    {
+        "id": "6",
+        "title": "ChatSlide 3.0发布：支持引用保留的AI演示文稿生成",
+        "summary": "AI演示文稿工具ChatSlide发布3.0版本，核心功能是生成幻灯片时自动保留原文中的引用和来源信息。",
+        "detail": "ChatSlide于9月10日发布3.0版本，主要面向研究人员和教育工作者。其核心功能是引用保留的幻灯片生成——用户上传的文档中的来源和引用信息会自动保留到生成的演示文稿中，而不是被剥离掉。这一功能对学术用户特别重要，因为之前的AI幻灯片生成工具往往会忽略引用信息，导致生成的演示文稿无法用于正式学术场合。这虽然是一个相对小的版本更新，但它指出了AI应用层真正创造价值的方向——在前沿实验室争论AGI的时候，应用层公司正在解决真实用户的真实痛点。这类小而实用的功能往往比旗舰模型发布对普通用户的日常生活影响更大。",
+        "url": "https://stanfordtechreview.com/articles/ai-news-this-week-gpt-6-astra-iphone-duo-funding",
+        "source": "Stanford Tech Review",
+        "category": "product_release",
+        "tags": [
+            "ChatSlide",
+            "演示文稿",
+            "AI工具",
+            "学术应用"
+        ],
+        "heat": 2,
+        "date": "2026-09-10"
+    }
 ]
 };

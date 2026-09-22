@@ -6,13 +6,114 @@ window.NEWS_DATA['2026-09-08'] = {
   "date": "2026-09-08",
   "generated_at": "2026-09-22T17:23:23+08:00",
   "total_count": 6,
-  "categories": {"funding": 2, "opensource": 1, "product_release": 2, "research_paper": 1},
+  "categories": {
+  "funding": 2,
+  "opensource": 1,
+  "product_release": 2,
+  "research_paper": 1
+},
   "items": [
-    {"id": "1", "title": "Cognition完成20亿美元E轮融资，估值480亿美元，Devin编码Agent收入近9亿", "summary": "AI编码Agent公司Cognition完成20亿美元E轮融资，估值480亿美元，四个月内估值几乎翻倍，年化收入近9亿美元。", "detail": "AI编码Agent公司Cognition于9月8日宣布完成20亿美元E轮融资，投后估值480亿美元，相比2026年5月的260亿美元，四个月内估值几乎翻倍。更值得注意的是其收入增长：年化运行率收入从4.92亿美元增长到近9亿美元。Cognition的旗舰产品Devin是目前最知名的AI软件工程师Agent，能够自主完成从需求分析到代码编写、测试和部署的完整开发流程。本轮融资由多家顶级VC领投，资金将用于扩大研发团队和拓展企业客户。", "url": "https://stanfordtechreview.com/articles/ai-news-this-week-gpt-6-astra-iphone-duo-funding", "source": "Stanford Tech Review", "category": "funding", "tags": ["Cognition", "Devin", "AI编程", "融资"], "heat": 5, "date": "2026-09-08"},
-    {"id": "2", "title": "Mistral AI获30亿欧元融资，创欧洲私营科技公司最大股权融资纪录", "summary": "法国AI公司Mistral AI获得30亿欧元增长轮融资，估值约240亿美元，三星领投。", "detail": "欧洲AI公司Mistral AI于9月8日宣布完成30亿欧元增长轮融资，投后估值约240亿美元。本轮融资由三星电子、PSG Equity和欧盟支持的Scaleup Europe Fund联合领投，是欧洲私营科技公司有史以来最大的股权融资。Mistral AI是欧洲最知名的基础模型公司，以其开源模型和企业级解决方案闻名。本轮融资后，Mistral将继续扩大其模型能力和企业市场份额，同时应对来自OpenAI、Google等美国巨头的竞争。这笔融资也被视为欧洲在AI主权战略上的重要一步。", "url": "https://stanfordtechreview.com/articles/ai-news-this-week-gpt-6-astra-iphone-duo-funding", "source": "Stanford Tech Review", "category": "funding", "tags": ["Mistral AI", "欧洲AI", "三星", "融资"], "heat": 5, "date": "2026-09-08"},
-    {"id": "3", "title": "面壁智能开源MiniCPM5-2B，登顶全球4B以下开源模型榜首", "summary": "面壁智能开源2B参数端侧小模型MiniCPM5-2B，在Artificial Analysis智能指数上登顶4B以下开源模型第一。", "detail": "面壁智能联合OpenBMB于9月8日正式开源MiniCPM5-2B基座模型，参数规模仅2B。在国际权威基准Artificial Analysis Intelligence Index上，该模型以23分登顶全球4B以下开源基座模型第一。模型支持工具调用、深度搜索与代码生成能力，初步实现端侧通用Agent功能，可在手机、车机等终端设备本地流畅运行。业内分析指出，端侧小模型能力边界持续突破，开源生态正推动AI能力从云端向终端快速下沉。", "url": "https://blog.csdn.net/yuntongliangda/article/details/165194345", "source": "CSDN / 面壁智能", "category": "opensource", "tags": ["面壁智能", "MiniCPM", "端侧模型", "开源"], "heat": 4, "date": "2026-09-08"},
-    {"id": "4", "title": "小鹏启用全球首条高阶通用人形机器人自动化产线，IRON自主走下产线", "summary": "小鹏集团宣布全球首条高阶通用人形机器人自动化产线正式启用，首台IRON机器人完成总装并自主走下产线。", "detail": "小鹏集团于9月8日宣布，其自主设计开发的全球首条高阶通用人形机器人自动化产线正式启用，首台高阶通用人形机器人IRON完成自动化总装并自主走下产线。该产线可实现多型号人形机器人的柔性生产，计划2026年底进入规模量产阶段，2027年产品正式上市交付。南方日报评论称，人形机器人从研发试制迈入规模化制造阶段，具身智能产业迎来量产拐点。", "url": "https://blog.csdn.net/yuntongliangda/article/details/165194345", "source": "CSDN / 南方日报", "category": "product_release", "tags": ["小鹏", "人形机器人", "IRON", "智能制造"], "heat": 4, "date": "2026-09-08"},
-    {"id": "5", "title": "智微智能发布智擎系列机器人域控制器，进入智元首批供应链", "summary": "智微智能推出覆盖三大芯片平台的机器人域控制器，算力从6TOPS到2070 FP4 TFLOPS，已进入头部人形机器人厂商供应链。", "detail": "智微智能于9月8日推出智擎系列机器人域控制器，覆盖NVIDIA Jetson、Intel Ultra、Rockchip三大芯片平台，提供6TOPS至2070 FP4 TFLOPS多档AI算力选择，可满足人形机器人、工业机器人等不同场景的算力需求。该产品已进入国内头部人形机器人厂商供应链，成为智元首批A链供应商。36氪分析认为，具身智能核心零部件加速国产替代，产业链配套能力持续完善。", "url": "https://blog.csdn.net/yuntongliangda/article/details/165194345", "source": "CSDN / 36氪", "category": "product_release", "tags": ["智微智能", "机器人域控制器", "具身智能", "国产替代"], "heat": 3, "date": "2026-09-08"},
-    {"id": "6", "title": "OpenAI发布内部研究加速报告：编码Agent如何重塑AI研究", "summary": "OpenAI发布内部研究报告，详细分析编码Agent如何改变AI研究工作流程，实验速度和任务复杂度均有显著提升。", "detail": "OpenAI于9月8日发布内部研究加速报告，展示了编码Agent如何重塑AI研究。报告包含早期Agent使用数据、实验速度、任务复杂度和研究加速等指标。OpenAI表示，编码Agent正在帮助研究员更快地实现想法、运行实验和分析数据，特别是在需要大量重复性编程工作的实验设置中。报告显示，使用Agent后，研究员可以将更多时间花在设计研究问题和分析结果上，而非编写样板代码。这一报告为AI公司如何在内部使用AI工具提高研发效率提供了详细案例。", "url": "https://stanfordtechreview.com/articles/ai-news-this-week-gpt-6-astra-iphone-duo-funding", "source": "Stanford Tech Review / OpenAI", "category": "research_paper", "tags": ["OpenAI", "AI研究", "编码Agent", "生产力"], "heat": 3, "date": "2026-09-08"}
+    {
+        "id": "1",
+        "title": "Cognition完成20亿美元E轮融资，估值480亿美元，Devin编码Agent收入近9亿",
+        "summary": "AI编码Agent公司Cognition完成20亿美元E轮融资，估值480亿美元，四个月内估值几乎翻倍，年化收入近9亿美元。",
+        "detail": "AI编码Agent公司Cognition于9月8日宣布完成20亿美元E轮融资，投后估值480亿美元——相比2026年5月的260亿美元，四个月内估值几乎翻倍。更值得注意的是其收入增长：年化运行率收入从4.92亿美元增长到近9亿美元。Cognition的旗舰产品Devin是目前最知名的AI软件工程师Agent，能够自主完成从需求分析到代码编写、测试和部署的完整开发流程。本轮融资由多家顶级VC领投，资金将用于扩大研发团队和拓展企业客户。Cognition的快速增长证明，AI Agent在企业级市场的商业化落地速度远超预期，投资者对应用层公司的信心持续高涨。",
+        "url": "https://stanfordtechreview.com/articles/ai-news-this-week-gpt-6-astra-iphone-duo-funding",
+        "source": "Stanford Tech Review",
+        "category": "funding",
+        "tags": [
+            "Cognition",
+            "Devin",
+            "AI编程",
+            "融资"
+        ],
+        "heat": 5,
+        "date": "2026-09-08"
+    },
+    {
+        "id": "2",
+        "title": "Mistral AI获30亿欧元融资，创欧洲私营科技公司最大股权融资纪录",
+        "summary": "法国AI公司Mistral AI获得30亿欧元(约35亿美元)增长轮融资，估值约240亿美元，三星领投。",
+        "detail": "欧洲AI公司Mistral AI于9月8日宣布完成30亿欧元(约35亿美元)增长轮融资，投后估值约240亿美元。本轮融资由三星电子、PSG Equity和欧盟支持的Scaleup Europe Fund联合领投，是欧洲私营科技公司有史以来最大的股权融资。Mistral AI是欧洲最知名的基础模型公司，以其开源模型和企业级解决方案闻名。本轮融资后，Mistral将继续扩大其模型能力和企业市场份额，同时应对来自OpenAI、Google等美国巨头的竞争。这笔融资也被视为欧洲在AI主权战略上的重要一步——欧盟希望培育本土的AI冠军公司，减少对美国技术的依赖。",
+        "url": "https://stanfordtechreview.com/articles/ai-news-this-week-gpt-6-astra-iphone-duo-funding",
+        "source": "Stanford Tech Review",
+        "category": "funding",
+        "tags": [
+            "Mistral AI",
+            "欧洲AI",
+            "三星",
+            "融资"
+        ],
+        "heat": 5,
+        "date": "2026-09-08"
+    },
+    {
+        "id": "3",
+        "title": "面壁智能开源MiniCPM5-2B，登顶全球4B以下开源模型榜首",
+        "summary": "面壁智能开源2B参数端侧小模型MiniCPM5-2B，在Artificial Analysis智能指数上登顶4B以下开源模型第一。",
+        "detail": "面壁智能联合OpenBMB于9月8日正式开源MiniCPM5-2B基座模型，参数规模仅2B。在国际权威基准Artificial Analysis Intelligence Index上，该模型以23分登顶全球4B以下开源基座模型第一。模型支持工具调用、深度搜索与代码生成能力，初步实现端侧通用Agent功能，可在手机、车机等终端设备本地流畅运行。业内分析指出，端侧小模型能力边界持续突破，开源生态正推动AI能力从云端向终端快速下沉。9月12日，国家超算互联网平台集中推送该模型上线，进一步降低开发者接入门槛。小参数跑出强性能，端侧AI普及的技术门槛正在快速消解。",
+        "url": "https://blog.csdn.net/yuntongliangda/article/details/165194345",
+        "source": "CSDN / 面壁智能",
+        "category": "opensource",
+        "tags": [
+            "面壁智能",
+            "MiniCPM",
+            "端侧模型",
+            "开源"
+        ],
+        "heat": 4,
+        "date": "2026-09-08"
+    },
+    {
+        "id": "4",
+        "title": "小鹏启用全球首条高阶通用人形机器人自动化产线，IRON自主走下产线",
+        "summary": "小鹏集团宣布全球首条高阶通用人形机器人自动化产线正式启用，首台IRON机器人完成总装并自主走下产线。",
+        "detail": "小鹏集团于9月8日宣布，其自主设计开发的\"全球首条高阶通用人形机器人自动化产线\"正式启用，首台高阶通用人形机器人IRON完成自动化总装并自主走下产线。该产线可实现多型号人形机器人的柔性生产，计划2026年底进入规模量产阶段，2027年产品正式上市交付。南方日报评论称，人形机器人从\"研发试制\"迈入\"规模化制造\"阶段，具身智能产业迎来量产拐点。小鹏表示，人形机器人的制造将复用其在汽车制造领域积累的自动化产线经验和供应链资源。这一事件标志着中国人形机器人产业正在从实验室原型阶段快速进入工业化量产阶段。",
+        "url": "https://blog.csdn.net/yuntongliangda/article/details/165194345",
+        "source": "CSDN / 南方日报",
+        "category": "product_release",
+        "tags": [
+            "小鹏",
+            "人形机器人",
+            "IRON",
+            "智能制造"
+        ],
+        "heat": 4,
+        "date": "2026-09-08"
+    },
+    {
+        "id": "5",
+        "title": "智微智能发布\"智擎\"系列机器人域控制器，进入智元首批供应链",
+        "summary": "智微智能推出覆盖三大芯片平台的机器人域控制器，算力从6TOPS到2070 FP4 TFLOPS，已进入头部人形机器人厂商供应链。",
+        "detail": "智微智能于9月8日推出\"智擎\"系列机器人域控制器，覆盖NVIDIA Jetson、Intel Ultra、Rockchip三大芯片平台，提供6TOPS至2070 FP4 TFLOPS多档AI算力选择，可满足人形机器人、工业机器人等不同场景的算力需求。该产品已进入国内头部人形机器人厂商供应链，成为智元首批\"A链\"供应商。36氪分析认为，具身智能核心零部件加速国产替代，产业链配套能力持续完善。机器人域控制器是具身智能的核心算力底座，国产配套能力越强，量产落地速度就越快。这一发布反映了中国人形机器人产业链正在快速成熟。",
+        "url": "https://blog.csdn.net/yuntongliangda/article/details/165194345",
+        "source": "CSDN / 36氪",
+        "category": "product_release",
+        "tags": [
+            "智微智能",
+            "机器人域控制器",
+            "具身智能",
+            "国产替代"
+        ],
+        "heat": 3,
+        "date": "2026-09-08"
+    },
+    {
+        "id": "6",
+        "title": "OpenAI发布内部研究加速报告：编码Agent如何重塑AI研究",
+        "summary": "OpenAI发布内部研究报告，详细分析编码Agent如何改变AI研究工作流程，实验速度和任务复杂度均有显著提升。",
+        "detail": "OpenAI于9月8日发布内部研究加速报告，展示了编码Agent如何重塑AI研究。报告包含早期Agent使用数据、实验速度、任务复杂度和研究加速等指标。OpenAI表示，编码Agent正在帮助研究员更快地实现想法、运行实验和分析数据，特别是在需要大量重复性编程工作的实验设置中。报告显示，使用Agent后，研究员可以将更多时间花在设计研究问题和分析结果上，而非编写样板代码。这一报告为AI公司如何在内部使用AI工具提高研发效率提供了详细案例，也为其他公司的AI工具采纳提供了参考。OpenAI称这只是早期数据，随着Agent能力提升，生产力收益可能会更加显著。",
+        "url": "https://stanfordtechreview.com/articles/ai-news-this-week-gpt-6-astra-iphone-duo-funding",
+        "source": "Stanford Tech Review / OpenAI",
+        "category": "research_paper",
+        "tags": [
+            "OpenAI",
+            "AI研究",
+            "编码Agent",
+            "生产力"
+        ],
+        "heat": 3,
+        "date": "2026-09-08"
+    }
 ]
 };

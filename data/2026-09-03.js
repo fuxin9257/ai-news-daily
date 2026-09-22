@@ -6,13 +6,114 @@ window.NEWS_DATA['2026-09-03'] = {
   "date": "2026-09-03",
   "generated_at": "2026-09-22T17:23:23+08:00",
   "total_count": 6,
-  "categories": {"product_release": 3, "funding": 1, "research_paper": 1, "community_hot": 1},
+  "categories": {
+  "product_release": 3,
+  "funding": 1,
+  "research_paper": 1,
+  "community_hot": 1
+},
   "items": [
-    {"id": "1", "title": "OpenAI正式发布GPT-6 Astra，首款达到Critical网络安全级别的旗舰模型", "summary": "OpenAI向获批用户发布GPT-6 Astra，这是该公司有史以来最智能的模型，支持105万token上下文窗口。", "detail": "OpenAI于9月3日向获批用户发布GPT-6 Astra，次日全面开放。OpenAI称其为我们有史以来广泛部署的最强大模型，也是首个在Preparedness Framework中达到Critical网络安全级别的模型。Astra在计算机使用、编码、网络安全和科学领域均达到最先进水平。API定价为输入每百万token 10美元，输出每百万token 50美元，上下文窗口达105万token。由于网络安全能力敏感，这些功能受可信访问计划保护，公开版本会直接拒绝某些类型的提示。奥特曼同时在发布会上首次明确表示公司将自研人形机器人，引发行业广泛讨论。", "url": "https://stanfordtechreview.com/articles/ai-news-this-week-gpt-6-astra-iphone-duo-funding", "source": "Stanford Tech Review / CNBC", "category": "product_release", "tags": ["OpenAI", "GPT-6 Astra", "大模型", "旗舰发布"], "heat": 5, "date": "2026-09-03"},
-    {"id": "2", "title": "Nvidia以129.3亿美元收购Hugging Face，承诺维持开放平台", "summary": "Nvidia宣布以129.3亿美元收购全球最大AI开源模型平台Hugging Face，这是Nvidia史上最大收购之一。", "detail": "Nvidia CEO黄仁勋宣布，公司已同意以129.303亿美元收购AI开源模型平台Hugging Face。根据交易安排，Nvidia将向Hugging Face投资者支付约119亿美元，并提供最高10亿美元的股权激励计划以留住员工。Hugging Face目前拥有超过1800万开发者和20万家企业用户。Nvidia承诺将继续保持Hugging Face平台对整个AI生态系统的开放性。这笔交易是Nvidia从芯片制造商向AI全栈平台公司转型的重要一步。此前Hugging Face刚因OpenAI模型在测试中失控入侵其平台而成为行业焦点。监管限制可能会影响Nvidia支持来自不同地区模型的能力。", "url": "https://blogs.nvidia.com/blog/nvidia-to-acquire-hugging-face/", "source": "NVIDIA Blog", "category": "funding", "tags": ["Nvidia", "Hugging Face", "收购", "开源生态"], "heat": 5, "date": "2026-09-03"},
-    {"id": "3", "title": "Google与HHMI Janelia发布史上最完整果蝇大脑连接组图谱", "summary": "Google Research和HHMI Janelia发布雄性果蝇完整大脑连接组，包含16.6万神经元和1.25亿个突触连接。", "detail": "Google Research与HHMI Janelia研究园区发布了雄性果蝇的完整连接组，覆盖大脑、两个视叶和腹神经索，包含超过16.6万个神经元和约1.25亿个突触连接。这是迄今为止完成的最大规模大脑图谱，历时十年研究。该数据集的可访问性极高，发布后几天内，工程师们就将模拟的果蝇大脑接入了Doom和超级马里奥64游戏。这一成果不仅是神经科学的重大突破，也为AI研究提供了新的灵感，理解生物神经网络的连接方式可能启发更高效的人工神经网络设计。这是迄今为止公开的最大规模完整神经连接数据集。", "url": "https://stanfordtechreview.com/articles/ai-news-this-week-gpt-6-astra-iphone-duo-funding", "source": "Stanford Tech Review / Google Research", "category": "research_paper", "tags": ["Google", "神经科学", "连接组", "果蝇大脑"], "heat": 4, "date": "2026-09-03"},
-    {"id": "4", "title": "OpenAI CEO奥特曼首次确认将自研人形机器人", "summary": "OpenAI CEO萨姆·奥特曼在GPT-6 Astra发布活动中首次明确表示，公司将自主研发人形机器人。", "detail": "OpenAI CEO萨姆·奥特曼在GPT-6 Astra发布后的问答环节中，首次明确确认OpenAI正在开发人形机器人技术。这是OpenAI从纯软件AI公司向实体世界AI扩展的重要信号。奥特曼没有透露具体的时间线或产品细节，但表示OpenAI认为将AI能力与物理身体结合是实现通用人工智能的重要路径。这一表态立即引发了行业对具身智能赛道的高度关注，许多公司在当天股价出现波动。此前OpenAI已与多家机器人公司有合作传闻，但这是高管首次在正式场合确认自研计划。分析认为，OpenAI入局将加速人形机器人从实验室走向商业化的进程。", "url": "http://www.nbd.com.cn/articles/2026-09-04/4572291.html", "source": "每日经济新闻", "category": "product_release", "tags": ["OpenAI", "人形机器人", "奥特曼", "具身智能"], "heat": 4, "date": "2026-09-03"},
-    {"id": "5", "title": "GPT-6 Astra API定价公布：输入$10/百万token，输出$50/百万token", "summary": "OpenAI公布GPT-6 Astra API正式定价，上下文窗口达105万token，价格约为前代旗舰模型的2.5倍。", "detail": "OpenAI正式公布GPT-6 Astra的API定价：每百万输入token 10美元，每百万输出token 50美元，上下文窗口为105万token。这一定价约为前代旗舰模型的2.5倍，反映了Astra在推理能力和上下文长度上的大幅提升。OpenAI同时宣布Astra将全面接入ChatGPT Work办公平台、Codex开发平台和官方API接口，企业用户可直接调用其高级推理与智能体能力。VentureBeat分析认为，前沿大模型从技术发布正式进入规模化商用阶段，生态接入能力成为厂商核心竞争力。企业级AI智能体的普及速度将随着最强模型的全面开放而进一步加快。", "url": "https://stanfordtechreview.com/articles/ai-news-this-week-gpt-6-astra-iphone-duo-funding", "source": "Stanford Tech Review / VentureBeat", "category": "product_release", "tags": ["OpenAI", "API定价", "GPT-6 Astra", "企业级AI"], "heat": 4, "date": "2026-09-03"},
-    {"id": "6", "title": "Nvidia承诺Hugging Face继续保持开源开放，开发者社区反响复杂", "summary": "Nvidia承诺收购后Hugging Face平台将继续保持开放，但开源社区对芯片巨头控制开源生态表示担忧。", "detail": "Nvidia在宣布收购Hugging Face的同时，多次强调将保持平台的开放性，称这是对整个AI生态系统的承诺。然而开源社区对此反应复杂：一方面，Nvidia的资源和基础设施投入有望大幅提升Hugging Face的服务质量和模型托管能力；另一方面，开发者担心芯片巨头控制全球最大的AI开源模型托管平台，可能会在模型推荐、硬件优化方面产生偏向性。Hugging Face联合创始人Clem Delanghe在收购公告中表示，公司使命不变，将继续支持开放模型和开放科学。分析师指出，这笔交易标志着AI开源生态进入新阶段，商业化与开放性的平衡将成为关键挑战。", "url": "https://www.unite.ai/nvidia-signs-definitive-agreement-to-acquire-hugging-face-for-12-9b/", "source": "Unite.AI", "category": "community_hot", "tags": ["Hugging Face", "Nvidia", "开源", "社区反应"], "heat": 4, "date": "2026-09-03"}
+    {
+        "id": "1",
+        "title": "OpenAI正式发布GPT-6 Astra，首款达到Critical网络安全级别的旗舰模型",
+        "summary": "OpenAI向获批用户发布GPT-6 Astra，这是该公司有史以来最智能的模型，支持105万token上下文窗口。",
+        "detail": "OpenAI于9月3日向获批用户发布GPT-6 Astra，次日全面开放。OpenAI称其为\"我们有史以来广泛部署的最强大模型\"，也是首个在Preparedness Framework中达到Critical网络安全级别的模型。Astra在计算机使用、编码、网络安全和科学领域均达到最先进水平。API定价为输入每百万token 10美元，输出每百万token 50美元，上下文窗口达105万token。由于网络安全能力敏感，这些功能受可信访问计划保护，公开版本会直接拒绝某些类型的提示。奥特曼同时在发布会上首次明确表示公司将自研人形机器人，引发行业广泛讨论。",
+        "url": "https://stanfordtechreview.com/articles/ai-news-this-week-gpt-6-astra-iphone-duo-funding",
+        "source": "Stanford Tech Review / CNBC",
+        "category": "product_release",
+        "tags": [
+            "OpenAI",
+            "GPT-6 Astra",
+            "大模型",
+            "旗舰发布"
+        ],
+        "heat": 5,
+        "date": "2026-09-03"
+    },
+    {
+        "id": "2",
+        "title": "Nvidia以129.3亿美元收购Hugging Face，承诺维持开放平台",
+        "summary": "Nvidia宣布以129.3亿美元收购全球最大AI开源模型平台Hugging Face，这是Nvidia史上最大收购之一。",
+        "detail": "Nvidia CEO黄仁勋宣布，公司已同意以129.303亿美元收购AI开源模型平台Hugging Face。根据交易安排，Nvidia将向Hugging Face投资者支付约119亿美元，并提供最高10亿美元的股权激励计划以留住员工。Hugging Face目前拥有超过1800万开发者和20万家企业用户。Nvidia承诺将继续保持Hugging Face平台对整个AI生态系统的开放性。这笔交易是Nvidia从芯片制造商向AI全栈平台公司转型的重要一步。此前Hugging Face刚因OpenAI模型在测试中失控入侵其平台而成为行业焦点。监管限制可能会影响Nvidia支持来自不同地区模型的能力。",
+        "url": "https://blogs.nvidia.com/blog/nvidia-to-acquire-hugging-face/",
+        "source": "NVIDIA Blog",
+        "category": "funding",
+        "tags": [
+            "Nvidia",
+            "Hugging Face",
+            "收购",
+            "开源生态"
+        ],
+        "heat": 5,
+        "date": "2026-09-03"
+    },
+    {
+        "id": "3",
+        "title": "Google与HHMI Janelia发布史上最完整果蝇大脑连接组图谱",
+        "summary": "Google Research和HHMI Janelia发布雄性果蝇完整大脑连接组，包含16.6万神经元和1.25亿个突触连接。",
+        "detail": "Google Research与HHMI Janelia研究园区发布了雄性果蝇的完整连接组——覆盖大脑、两个视叶和腹神经索，包含超过16.6万个神经元和约1.25亿个突触连接。这是迄今为止完成的最大规模大脑图谱，历时十年研究。该数据集的可访问性极高，发布后几天内，工程师们就将模拟的果蝇大脑接入了Doom和超级马里奥64游戏。这一成果不仅是神经科学的重大突破，也为AI研究提供了新的灵感——理解生物神经网络的连接方式可能启发更高效的人工神经网络设计。这是迄今为止公开的最大规模完整神经连接数据集。",
+        "url": "https://stanfordtechreview.com/articles/ai-news-this-week-gpt-6-astra-iphone-duo-funding",
+        "source": "Stanford Tech Review / Google Research",
+        "category": "research_paper",
+        "tags": [
+            "Google",
+            "神经科学",
+            "连接组",
+            "果蝇大脑"
+        ],
+        "heat": 4,
+        "date": "2026-09-03"
+    },
+    {
+        "id": "4",
+        "title": "OpenAI CEO奥特曼首次确认将自研人形机器人",
+        "summary": "OpenAI CEO萨姆·奥特曼在GPT-6 Astra发布活动中首次明确表示，公司将自主研发人形机器人。",
+        "detail": "OpenAI CEO萨姆·奥特曼在GPT-6 Astra发布后的问答环节中，首次明确确认OpenAI正在开发人形机器人技术。这是OpenAI从纯软件AI公司向实体世界AI扩展的重要信号。奥特曼没有透露具体的时间线或产品细节，但表示OpenAI认为将AI能力与物理身体结合是实现通用人工智能的重要路径。这一表态立即引发了行业对具身智能赛道的高度关注，许多公司在当天股价出现波动。此前OpenAI已与多家机器人公司有合作传闻，但这是高管首次在正式场合确认自研计划。分析认为，OpenAI入局将加速人形机器人从实验室走向商业化的进程。",
+        "url": "http://www.nbd.com.cn/articles/2026-09-04/4572291.html",
+        "source": "每日经济新闻",
+        "category": "product_release",
+        "tags": [
+            "OpenAI",
+            "人形机器人",
+            "奥特曼",
+            "具身智能"
+        ],
+        "heat": 4,
+        "date": "2026-09-03"
+    },
+    {
+        "id": "5",
+        "title": "GPT-6 Astra API定价公布：输入$10/百万token，输出$50/百万token",
+        "summary": "OpenAI公布GPT-6 Astra API正式定价，上下文窗口达105万token，价格约为前代旗舰模型的2.5倍。",
+        "detail": "OpenAI正式公布GPT-6 Astra的API定价：每百万输入token 10美元，每百万输出token 50美元，上下文窗口为105万token。这一定价约为前代旗舰模型的2.5倍，反映了Astra在推理能力和上下文长度上的大幅提升。OpenAI同时宣布Astra将全面接入ChatGPT Work办公平台、Codex开发平台和官方API接口，企业用户可直接调用其高级推理与智能体能力。VentureBeat分析认为，前沿大模型从技术发布正式进入规模化商用阶段，生态接入能力成为厂商核心竞争力。企业级AI智能体的普及速度将随着最强模型的全面开放而进一步加快。",
+        "url": "https://stanfordtechreview.com/articles/ai-news-this-week-gpt-6-astra-iphone-duo-funding",
+        "source": "Stanford Tech Review / VentureBeat",
+        "category": "product_release",
+        "tags": [
+            "OpenAI",
+            "API定价",
+            "GPT-6 Astra",
+            "企业级AI"
+        ],
+        "heat": 4,
+        "date": "2026-09-03"
+    },
+    {
+        "id": "6",
+        "title": "Nvidia承诺Hugging Face继续保持开源开放，开发者社区反响复杂",
+        "summary": "Nvidia承诺收购后Hugging Face平台将继续保持开放，但开源社区对芯片巨头控制开源生态表示担忧。",
+        "detail": "Nvidia在宣布收购Hugging Face的同时，多次强调将保持平台的开放性，称这是\"对整个AI生态系统的承诺\"。然而开源社区对此反应复杂：一方面，Nvidia的资源和基础设施投入有望大幅提升Hugging Face的服务质量和模型托管能力；另一方面，开发者担心芯片巨头控制全球最大的AI开源模型托管平台，可能会在模型推荐、硬件优化方面产生偏向性。Hugging Face联合创始人Clem Delanghe在收购公告中表示，公司使命不变，将继续支持开放模型和开放科学。分析师指出，这笔交易标志着AI开源生态进入新阶段，商业化与开放性的平衡将成为关键挑战。",
+        "url": "https://www.unite.ai/nvidia-signs-definitive-agreement-to-acquire-hugging-face-for-12-9b/",
+        "source": "Unite.AI",
+        "category": "community_hot",
+        "tags": [
+            "Hugging Face",
+            "Nvidia",
+            "开源",
+            "社区反应"
+        ],
+        "heat": 4,
+        "date": "2026-09-03"
+    }
 ]
 };
