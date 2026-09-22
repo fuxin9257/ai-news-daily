@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="每日AI新闻聚合 - 过去24小时AI领域重要新闻、论文进展、开源项目、融资动态，按热度排序，一键跳转原文">
+  <meta name="keywords" content="AI新闻,人工智能,大模型,LLM,AI论文,GitHub热门,AI融资,每日AI动态">
+  <meta name="author" content="AI News Daily">
+  <meta property="og:title" content="AI News Daily - 每日AI新闻聚合">
+  <meta property="og:description" content="过去24小时AI领域重要动态，按热度排序，结构化呈现">
+  <meta property="og:type" content="website">
+  <title>AI News Daily | 每日AI新闻聚合</title>
+  <link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Space+Grotesk:wght@400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <h1 class="brand-title">AI News Daily</h1>
+        <span class="brand-sub">每日AI新闻聚合</span>
+      </div>
+      <div class="header-actions">
+        <div class="date-ticker" id="dateTicker">
+          <span class="ticker-label">LATEST</span>
+          <span class="ticker-date" id="tickerDate">--</span>
+        </div>
+        <button class="theme-toggle" id="themeToggle" aria-label="切换深色/浅色模式">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+  <nav class="date-nav">
+    <div class="container date-nav-inner">
+      <div class="date-selector" id="dateSelector"></div>
+      <div class="stats-bar" id="statsBar"></div>
+    </div>
+  </nav>
+  <section class="filter-bar">
+    <div class="container filter-inner">
+      <div class="search-box">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        <input type="text" id="searchInput" placeholder="搜索新闻标题、标签、来源..." aria-label="搜索新闻">
+      </div>
+      <div class="category-filters" id="categoryFilters"></div>
+      <div class="heat-filter">
+        <span class="filter-label">热度</span>
+        <select id="heatFilter" aria-label="按热度筛选">
+          <option value="0">全部</option>
+          <option value="5">5星</option>
+          <option value="4">4星+</option>
+          <option value="3">3星+</option>
+        </select>
+      </div>
+    </div>
+  </section>
+  <main class="main-content">
+    <div class="container main-grid">
+      <div class="news-column">
+        <div class="column-header">
+          <h2 class="column-title" id="columnTitle">最新动态</h2>
+          <span class="item-count" id="itemCount">0 条</span>
+        </div>
+        <div class="news-list" id="newsList"></div>
+        <div class="empty-state" id="emptyState" style="display:none;">
+          <p>没有找到匹配的新闻</p>
+          <button class="btn-secondary" id="clearFilters">清除筛选条件</button>
+        </div>
+      </div>
+      <aside class="sidebar">
+        <div class="sidebar-section">
+          <h3 class="sidebar-title">分类统计</h3>
+          <div class="category-stats" id="categoryStats"></div>
+        </div>
+        <div class="sidebar-section">
+          <h3 class="sidebar-title">热门标签</h3>
+          <div class="tag-cloud" id="tagCloud"></div>
+        </div>
+        <div class="sidebar-section">
+          <h3 class="sidebar-title">历史归档</h3>
+          <div class="archive-list" id="archiveList"></div>
+        </div>
+        <div class="sidebar-section about-section">
+          <h3 class="sidebar-title">关于</h3>
+          <p class="about-text">每日自动聚合AI领域新闻、论文、开源项目与融资动态。数据来源于公开网络，按热度排序，所有内容链接至原始出处。</p>
+          <p class="about-meta">数据更新：每日 07:00 (UTC+8)</p>
+        </div>
+      </aside>
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>AI News Daily &mdash; 每日AI新闻聚合 | 数据仅供参考，所有内容版权归原作者所有</p>
+    </div>
+  </footer>
+  <script src="data/manifest.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
