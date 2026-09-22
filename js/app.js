@@ -125,14 +125,11 @@
     }
     if (!state.data) return;
     var d = state.data;
+    var actualItems = d.items ? d.items.filter(function(item) { return !item.date || item.date === state.currentDate; }) : [];
     el.statsBar.innerHTML =
-      '<span class="stat-item">共 <span class="stat-value">' + d.total_count + '</span> 条</span>' +
-      '<span class="stat-item">5星 <span class="stat-value">' + countByHeat(5) + '</span></span>' +
-      '<span class="stat-item">分类 <span class="stat-value">' + Object.keys(d.categories || {}).length + '</span></span>';
-  }
-  function countByHeat(h) {
-    if (!state.data || !state.data.items) return 0;
-    return state.data.items.filter(function(i) { return i.heat === h; }).length;
+      '<span class="stat-item">共 <span class="stat-value">' + actualItems.length + '</span> 条</span>' +
+      '<span class="stat-item">5星 <span class="stat-value">' + actualItems.filter(function(i) { return i.heat === 5; }).length + '</span></span>' +
+      '<span class="stat-item">分类 <span class="stat-value">' + new Set(actualItems.map(function(i) { return i.category; })).size + '</span></span>';
   }
 
   function renderCategoryFilters() {
@@ -167,8 +164,9 @@
   function getFilteredItems() {
     var items;
     if (state.isSearchMode && state.allItems) items = state.allItems.slice();
-    else if (state.data && state.data.items) items = state.data.items.slice();
-    else return [];
+    else if (state.data && state.data.items) {
+      items = state.data.items.filter(function(item) { return !item.date || item.date === state.currentDate; });
+    } else return [];
     if (state.filters.category !== 'all') items = items.filter(function(i) { return i.category === state.filters.category; });
     if (state.filters.heat > 0) items = items.filter(function(i) { return i.heat >= state.filters.heat; });
     if (state.filters.tag) items = items.filter(function(i) { return i.tags && i.tags.some(function(t) { return t.toLowerCase() === state.filters.tag.toLowerCase(); }); });
@@ -252,16 +250,11 @@
       var di = document.createElement('div');
       di.className = 'card-detail-inner';
       var dl = document.createElement('span');
-      dl.className = 'detail-label';
-      dl.textContent = '详细';
-      di.appendChild(dl);
+      dl.className = 'detail-label'; dl.textContent = '详细'; di.appendChild(dl);
       item.detail.split(/\n\s*\n/).forEach(function(p) {
-        var pe = document.createElement('p');
-        pe.textContent = p.trim();
-        di.appendChild(pe);
+        var pe = document.createElement('p'); pe.textContent = p.trim(); di.appendChild(pe);
       });
-      dw.appendChild(di);
-      card.appendChild(dw);
+      dw.appendChild(di); card.appendChild(dw);
     }
     var footer = document.createElement('div');
     footer.className = 'card-footer';
@@ -270,8 +263,7 @@
       td.className = 'card-tags';
       item.tags.forEach(function(tag) {
         var te = document.createElement('span');
-        te.className = 'tag';
-        te.textContent = tag;
+        te.className = 'tag'; te.textContent = tag;
         te.addEventListener('click', function(e) {
           e.stopPropagation();
           state.filters.tag = state.filters.tag === tag ? null : tag;
@@ -340,8 +332,7 @@
     el.tagCloud.innerHTML = '';
     sorted.forEach(function(tag) {
       var te = document.createElement('span');
-      te.className = 'tag';
-      te.textContent = tag + ' (' + tc[tag] + ')';
+      te.className = 'tag'; te.textContent = tag + ' (' + tc[tag] + ')';
       if (state.filters.tag === tag) { te.style.color = 'var(--accent)'; te.style.borderColor = 'var(--accent)'; te.style.background = 'var(--accent-soft)'; }
       te.addEventListener('click', function() { state.filters.tag = state.filters.tag === tag ? null : tag; renderTagCloud(); renderNews(); });
       el.tagCloud.appendChild(te);
@@ -350,7 +341,7 @@
 
   function renderArchiveList() {
     if (!window.NEWS_MANIFEST || !window.NEWS_MANIFEST.dates) return;
-    var dates = window.NEWS_MANIFEST.dates;
+    var dates = window.NEWS_MANIFEST.dates.slice().reverse();
     var counts = window.NEWS_MANIFEST.counts || {};
     el.archiveList.innerHTML = '';
     dates.forEach(function(date) {
@@ -369,7 +360,7 @@
 
   function enterSearchMode(query) {
     state.isSearchMode = true;
-    state.filters.category = 'all'; state.filters.heat = 0; state.filters.tag = null;
+    state.filters = { category: 'all', search: query, heat: 0, tag: null };
     el.heatFilter.value = '0';
     el.columnTitle.textContent = '搜索：' + query;
     renderDateSelector(); renderCategoryFilters(); renderStatsBar();
