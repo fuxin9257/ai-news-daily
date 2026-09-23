@@ -17,6 +17,7 @@ import json
 import os
 import re
 import sys
+import time
 import datetime
 import urllib.request
 import urllib.parse
@@ -30,13 +31,21 @@ TZ_BEIJING = datetime.timezone(datetime.timedelta(hours=8))
 TODAY = datetime.datetime.now(TZ_BEIJING).strftime("%Y-%m-%d")
 MAX_ITEMS = 20
 
-# RSS feeds: (display_name, url)
-RSS_FEEDS = [
+# Chinese RSS feeds (native Chinese content, no translation needed)
+CHINESE_RSS = [
+    ("量子位", "https://www.qbitai.com/feed"),
+    ("机器之心", "https://www.jiqizhixin.com/rss"),
+    ("36氪", "https://36kr.com/feed"),
+    ("InfoQ中文", "https://www.infoq.cn/feed"),
+    ("极客公园", "https://www.geekpark.net/rss"),
+]
+
+# English RSS feeds (will be translated to Chinese)
+ENGLISH_RSS = [
     ("TechCrunch AI", "https://techcrunch.com/category/artificial-intelligence/feed/"),
     ("The Verge AI", "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml"),
     ("Ars Technica", "https://feeds.arstechnica.com/arstechnica/features"),
     ("MIT Tech Review", "https://www.technologyreview.com/feed/"),
-    ("VentureBeat AI", "https://venturebeat.com/category/ai/feed/"),
 ]
 
 # Category keyword mapping
@@ -97,13 +106,33 @@ def fetch_url(url, timeout=15):
         return resp.read().decode("utf-8", errors="replace")
 
 
+
+# ── Translation (MyMemory free API) ────────────────────────────────────────
+def translate_to_chinese(text):
+    """Translate English text to Chinese using MyMemory free translation API."""
+    if not text or not text.strip():
+        return text
+    chinese_chars = len(re.findall(r'[\u4e00-\u9fff]', text))
+    if chinese_chars > len(text) * 0.3:
+        return text
+    try:
+        chunk = text[:480]
+        encoded = urllib.parse.quote(chunk)
+        url = f"https://api.mymemory.translated.net/get?q={encoded}&langpair=en|zh-CN"
+        result = json.loads(fetch_url(url, timeout=10))
+        translated = result.get("responseData", {}).get("translatedText", "")
+        if translated and translated != chunk:
+            return translated
+    except Exception as e:
+        print(f"    [TRANSLATE WARN] {e}")
+    return text
 # ── RSS feed fetching ─────────────────────────────────────────────────────
-def fetch_rss_feed(name, url):
-    """Fetch and parse an RSS feed using feedparser."""
+def fetch_rss_feed(name, url, lang="zh"):
+    """Fetch and parse an RSS feed. lang='zh' for Chinese, 'en' for English."""
     try:
         import feedparser
     except ImportError:
-        print("  [WARN] feedparser not installed, skipping RSS feeds")
+        print("  [WARN] feedparser not installed")
         return []
 
     try:
@@ -115,11 +144,16 @@ def fetch_rss_feed(name, url):
             summary = re.sub(r"<[^>]+>", "", entry.get("summary", "")).strip()
             summary = re.sub(r"\s+", " ", summary)[:300]
             if title and link:
+                if lang == "en":
+                    title = translate_to_chinese(title)
+                    summary = translate_to_chinese(summary)
+                    time.sleep(0.3)
                 items.append({
                     "title": title,
                     "url": link,
                     "source": name,
                     "summary": summary,
+                    "lang": lang,
                 })
         return items
     except Exception as e:
@@ -147,13 +181,16 @@ def fetch_hackernews():
                 text_lower = title.lower()
                 if any(kw in text_lower for kw in AI_KEYWORDS):
                     score = story.get("score", 0)
+                    translated_title = translate_to_chinese(title)
                     items.append({
-                        "title": title,
+                        "title": translated_title,
                         "url": story.get("url", f"https://news.ycombinator.com/item?id={story_id}"),
                         "source": "HackerNews",
                         "summary": f"HN 热度: {score} 赞 / {story.get('descendants', 0)} 评论",
                         "score": score,
+                        "lang": "en",
                     })
+                    time.sleep(0.3)
             except Exception:
                 continue
         items.sort(key=lambda x: x.get("score", 0), reverse=True)
@@ -177,17 +214,20 @@ def fetch_github_trending():
         items = []
         for repo in data.get("items", []):
             desc = repo.get("description") or "No description"
+            translated_desc = translate_to_chinese(desc)
             items.append({
-                "title": f"{repo['full_name']}: {desc}",
+                "title": f"{repo['full_name']}: {translated_desc}",
                 "url": repo["html_url"],
                 "source": "GitHub Trending",
                 "summary": (
                     f"Stars: {repo['stargazers_count']:,} | "
-                    f"Language: {repo.get('language') or 'Unknown'} | "
-                    f"Updated: {repo.get('pushed_at', '')[:10]}"
+                    f"语言: {repo.get('language') or 'Unknown'} | "
+                    f"更新: {repo.get('pushed_at', '')[:10]}"
                 ),
                 "stars": repo["stargazers_count"],
+                "lang": "en",
             })
+            time.sleep(0.2)
         return items
     except Exception as e:
         print(f"  [WARN] Failed to fetch GitHub trending: {e}")
@@ -241,21 +281,28 @@ def main():
 
     all_items = []
 
-    # 1. RSS feeds
-    print("\n[1/3] Fetching RSS feeds...")
-    for name, url in RSS_FEEDS:
-        items = fetch_rss_feed(name, url)
+    # 1. Chinese RSS feeds (no translation needed)
+    print("\n[1/4] Fetching Chinese RSS feeds...")
+    for name, url in CHINESE_RSS:
+        items = fetch_rss_feed(name, url, lang="zh")
         print(f"  {name}: {len(items)} items")
         all_items.extend(items)
 
-    # 2. HackerNews
-    print("\n[2/3] Fetching HackerNews...")
+    # 2. English RSS feeds (auto-translate to Chinese)
+    print("\n[2/4] Fetching English RSS feeds (translating to Chinese)...")
+    for name, url in ENGLISH_RSS:
+        items = fetch_rss_feed(name, url, lang="en")
+        print(f"  {name}: {len(items)} items")
+        all_items.extend(items)
+
+    # 3. HackerNews
+    print("\n[3/4] Fetching HackerNews (translating)...")
     hn_items = fetch_hackernews()
     print(f"  HackerNews: {len(hn_items)} AI stories")
     all_items.extend(hn_items)
 
-    # 3. GitHub trending
-    print("\n[3/3] Fetching GitHub trending...")
+    # 4. GitHub trending
+    print("\n[4/4] Fetching GitHub trending (translating)...")
     gh_items = fetch_github_trending()
     print(f"  GitHub: {len(gh_items)} trending repos")
     all_items.extend(gh_items)
