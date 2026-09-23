@@ -1,54 +1,52 @@
 window.NEWS_DATA = window.NEWS_DATA || {};
 window.NEWS_DATA['2026-09-23'] = {
   "date": "2026-09-23",
-  "generated_at": "2026-09-23T08:37:07.245857+08:00",
+  "generated_at": "2026-09-23T08:49:54.014078+08:00",
   "time_window": "past_24h",
   "total_count": 20,
   "categories": {
-    "product_release": 6,
-    "research_paper": 3,
-    "funding": 1,
+    "product_release": 4,
+    "research_paper": 4,
+    "funding": 0,
     "opensource": 2,
-    "regulation": 2,
-    "community_hot": 6
+    "regulation": 0,
+    "community_hot": 10
   },
   "items": [
     {
       "id": "1",
-      "title": "TechCrunch Founder Summit’s agenda revealed: Unlock fundraising, hiring, and AI insights in Boston on November 4",
-      "summary": "Founders shouldn't have to learn the hardest lessons the hardest way. TechCrunch Founder Summit is designed to make the challenges of starting a company easier and the highs that much greater.",
-      "detail": "Founders shouldn't have to learn the hardest lessons the hardest way. TechCrunch Founder Summit is designed to make the challenges of starting a company easier and the highs that much greater. 来源：TechCrunch AI。",
-      "url": "https://techcrunch.com/2026/09/22/techcrunch-founder-summits-agenda-revealed-unlock-fundraising-hiring-and-ai-insights-in-boston-on-november-4/",
-      "source": "TechCrunch AI",
-      "category": "community_hot",
-      "tags": [
-        "AI"
-      ],
-      "heat": 4,
+      "title": "陆川手搓历史现场，王珞丹熬夜抽卡，阿里全模态开始兜底生产",
+      "summary": "阿里：三年之内会出现一个原生的全模态统一生成模型，未来体验将不再受限于模态边界。",
+      "detail": "阿里：三年之内会出现一个原生的全模态统一生成模型，未来体验将不再受限于模态边界。 来源：量子位。",
+      "url": "https://www.qbitai.com/2026/09/494429.html",
+      "source": "量子位",
+      "category": "research_paper",
+      "tags": [],
+      "heat": 3,
       "date": "2026-09-23"
     },
     {
       "id": "2",
-      "title": "Snorkel AI triples valuation to $3.5B as demand for AI training data booms",
-      "summary": "The seven-year-old startup has raised a $350 million Series E to fuel its data-as-a-service approach.",
-      "detail": "The seven-year-old startup has raised a $350 million Series E to fuel its data-as-a-service approach. 来源：TechCrunch AI。",
-      "url": "https://techcrunch.com/2026/09/22/snorkel-ai-triples-valuation-to-3-5b-as-demand-for-ai-training-data-booms/",
-      "source": "TechCrunch AI",
-      "category": "funding",
+      "title": "Agent时代，CPU的价值该重估了",
+      "summary": "CPU与GPU趋近1∶1",
+      "detail": "CPU与GPU趋近1∶1 来源：量子位。",
+      "url": "https://www.qbitai.com/2026/09/494430.html",
+      "source": "量子位",
+      "category": "community_hot",
       "tags": [
-        "AI"
+        "Agent"
       ],
       "heat": 3,
       "date": "2026-09-23"
     },
     {
       "id": "3",
-      "title": "Qualcomm launches two new smartphone chips with emphasis on AI",
-      "summary": "Qualcomm said that its new top chip can run 30B mixture-of-expert model locally.",
-      "detail": "Qualcomm said that its new top chip can run 30B mixture-of-expert model locally. 来源：TechCrunch AI。",
-      "url": "https://techcrunch.com/2026/09/22/qualcomm-launches-two-new-smartphone-chips-with-emphasis-on-ai/",
-      "source": "TechCrunch AI",
-      "category": "product_release",
+      "title": "直播预告：未来两三年，哪些工业AI场景会率先爆发？",
+      "summary": "从真实工厂到产品复制，再到生态和下一批机会，两位嘉宾会把工业AI从「能用」走向「规模化」的关键问题一层层拆开。",
+      "detail": "从真实工厂到产品复制，再到生态和下一批机会，两位嘉宾会把工业AI从「能用」走向「规模化」的关键问题一层层拆开。 来源：量子位。",
+      "url": "https://www.qbitai.com/2026/09/494420.html",
+      "source": "量子位",
+      "category": "community_hot",
       "tags": [
         "AI"
       ],
@@ -57,57 +55,12 @@ window.NEWS_DATA['2026-09-23'] = {
     },
     {
       "id": "4",
-      "title": "Meta admits Muse’s likeness to OpenClaw isn’t a coincidence",
-      "summary": "Meta says Muse was built from scratch, but acknowledges the AI assistant was \"heavily inspired\" by OpenClaw — down to some of its workspace filenames and content.",
-      "detail": "Meta says Muse was built from scratch, but acknowledges the AI assistant was \"heavily inspired\" by OpenClaw — down to some of its workspace filenames and content. 来源：TechCrunch AI。",
-      "url": "https://techcrunch.com/2026/09/22/meta-admits-muses-likeness-to-openclaw-isnt-a-coincidence/",
-      "source": "TechCrunch AI",
-      "category": "regulation",
-      "tags": [
-        "AI",
-        "Meta"
-      ],
-      "heat": 5,
-      "date": "2026-09-23"
-    },
-    {
-      "id": "5",
-      "title": "OpenAI launches GPT-6 Sol and Luna, boasting lower cost and fewer mistakes",
-      "summary": "OpenAI is launching two new models, which it says are cut from the same cloth as Astra.",
-      "detail": "OpenAI is launching two new models, which it says are cut from the same cloth as Astra. 来源：TechCrunch AI。",
-      "url": "https://techcrunch.com/2026/09/22/openai-launches-gpt-6-sol-and-luna/",
-      "source": "TechCrunch AI",
+      "title": "讲真，我没看出这图是AI做的，更没想到是国产AI做的",
+      "summary": "商汤U1 Pro，正式发布",
+      "detail": "商汤U1 Pro，正式发布 来源：量子位。",
+      "url": "https://www.qbitai.com/2026/09/494263.html",
+      "source": "量子位",
       "category": "product_release",
-      "tags": [
-        "AI",
-        "OpenAI",
-        "GPT"
-      ],
-      "heat": 4,
-      "date": "2026-09-23"
-    },
-    {
-      "id": "6",
-      "title": "Anthropic releases Opus 5.5 with lower prices and Fable-level performance",
-      "summary": "Anthropic called it \"the strongest-performing model we've tested to date.\"",
-      "detail": "Anthropic called it \"the strongest-performing model we've tested to date.\" 来源：TechCrunch AI。",
-      "url": "https://techcrunch.com/2026/09/22/anthropic-releases-opus-5-5-with-lower-prices-and-fable-level-performance/",
-      "source": "TechCrunch AI",
-      "category": "product_release",
-      "tags": [
-        "Anthropic"
-      ],
-      "heat": 4,
-      "date": "2026-09-23"
-    },
-    {
-      "id": "7",
-      "title": "AstroForge is putting AI in command of its next spacecraft",
-      "summary": "Autonomy-1 will have a small, transformer-based AI model taking charge of a space probe.",
-      "detail": "Autonomy-1 will have a small, transformer-based AI model taking charge of a space probe. 来源：TechCrunch AI。",
-      "url": "https://techcrunch.com/2026/09/22/astroforge-is-putting-ai-in-command-of-its-next-spacecraft/",
-      "source": "TechCrunch AI",
-      "category": "research_paper",
       "tags": [
         "AI"
       ],
@@ -115,197 +68,227 @@ window.NEWS_DATA['2026-09-23'] = {
       "date": "2026-09-23"
     },
     {
-      "id": "8",
-      "title": "Five AI safety sessions every founder should have on their TechCrunch Disrupt 2026 agenda",
-      "summary": "At TechCrunch Disrupt 2026, five sessions across the AI Stage and Real World AI Stage cover AI safety, featuring leaders from Anthropic, Nvidia, AWS, Waabi, and more. Register before September 25 to s",
-      "detail": "At TechCrunch Disrupt 2026, five sessions across the AI Stage and Real World AI Stage cover AI safety, featuring leaders from Anthropic, Nvidia, AWS, Waabi, and more. Register before September 25 to save up to $200. 来源：TechCrunch AI。",
-      "url": "https://techcrunch.com/2026/09/22/five-ai-safety-sessions-every-founder-should-have-on-their-techcrunch-disrupt-2026-agenda/",
-      "source": "TechCrunch AI",
-      "category": "opensource",
+      "id": "5",
+      "title": "WebArena作者Shuyan Zhou入职Meta超级智能实验室",
+      "summary": "梦想是做能帮妈妈订机票的AI浏览器。",
+      "detail": "梦想是做能帮妈妈订机票的AI浏览器。 来源：量子位。",
+      "url": "https://www.qbitai.com/2026/09/493653.html",
+      "source": "量子位",
+      "category": "community_hot",
       "tags": [
         "AI",
-        "Anthropic",
-        "NVIDIA"
+        "Meta"
       ],
-      "heat": 5,
+      "heat": 4,
+      "date": "2026-09-23"
+    },
+    {
+      "id": "6",
+      "title": "6天烧光2000多万，拿下开源第一！小米史无前例「炼丹直播」收官",
+      "summary": "Hugging Face CEO：「太棒了」",
+      "detail": "Hugging Face CEO：「太棒了」 来源：量子位。",
+      "url": "https://www.qbitai.com/2026/09/494179.html",
+      "source": "量子位",
+      "category": "opensource",
+      "tags": [
+        "开源"
+      ],
+      "heat": 3,
+      "date": "2026-09-23"
+    },
+    {
+      "id": "7",
+      "title": "基元律动韩凯：从多模型调度到反馈闭环，探索Agent持续进化",
+      "summary": "9月22日，在2026杭州云栖大会企业级Agent实践峰会上，基元律动联合创始人兼CTO韩凯发表演讲《从Harness到RSI飞轮》。",
+      "detail": "9月22日，在2026杭州云栖大会企业级Agent实践峰会上，基元律动联合创始人兼CTO韩凯发表演讲《从Harness到RSI飞轮》。 来源：量子位。",
+      "url": "https://www.qbitai.com/2026/09/494120.html",
+      "source": "量子位",
+      "category": "research_paper",
+      "tags": [
+        "Agent"
+      ],
+      "heat": 3,
+      "date": "2026-09-23"
+    },
+    {
+      "id": "8",
+      "title": "别让一部片子倒在交付前：SkyProduction 抢先首发短剧质检",
+      "summary": "上传成片和字幕，系统自动从字幕、音画、内容底线三个维度逐集跑一遍，输出可下载、可回填的质检报告。",
+      "detail": "上传成片和字幕，系统自动从字幕、音画、内容底线三个维度逐集跑一遍，输出可下载、可回填的质检报告。 来源：量子位。",
+      "url": "https://www.qbitai.com/2026/09/494043.html",
+      "source": "量子位",
+      "category": "community_hot",
+      "tags": [],
+      "heat": 3,
       "date": "2026-09-23"
     },
     {
       "id": "9",
-      "title": "TechCrunch Disrupt 2026: Aaron Edsinger brings Hello Robot’s Stretch 4 to life onstage",
-      "summary": "Hello Robot CEO and co-founder Aaron Edsinger will bring Stretch 4 for a live demo on the Real World AI Stage at TechCrunch Disrupt 2026. Register before September 25 to save up to $200, plus get a se",
-      "detail": "Hello Robot CEO and co-founder Aaron Edsinger will bring Stretch 4 for a live demo on the Real World AI Stage at TechCrunch Disrupt 2026. Register before September 25 to save up to $200, plus get a second pass at 50% off. 来源：TechCrunch AI。",
-      "url": "https://techcrunch.com/2026/09/22/techcrunch-disrupt-2026-aaron-edsinger-brings-hello-robots-stretch-4-to-life-onstage/",
-      "source": "TechCrunch AI",
-      "category": "community_hot",
+      "title": "虎鲸文娱推出“鲸锐AI”影视制作与管理平台，打造文娱产业新基建",
+      "summary": "9月22日，在2026云栖大会「AI+文化传媒」技术发展论坛上，虎鲸文娱集团推出行业首个AI影视制作与管理平台“鲸锐AI”",
+      "detail": "9月22日，在2026云栖大会「AI+文化传媒」技术发展论坛上，虎鲸文娱集团推出行业首个AI影视制作与管理平台“鲸锐AI” 来源：量子位。",
+      "url": "https://www.qbitai.com/2026/09/493865.html",
+      "source": "量子位",
+      "category": "product_release",
       "tags": [
         "AI"
       ],
-      "heat": 4,
+      "heat": 3,
       "date": "2026-09-23"
     },
     {
       "id": "10",
-      "title": "Exhibit tables added: One last chance to showcase your startup at TechCrunch Disrupt 2026",
-      "summary": "We have reopened our exhibitor program for 1 more week. Book your exhibit table by September 30 at 11:59 p.m. PT and showcase your startup in front of 10,000+ founders, investors, and tech leaders at ",
-      "detail": "We have reopened our exhibitor program for 1 more week. Book your exhibit table by September 30 at 11:59 p.m. PT and showcase your startup in front of 10,000+ founders, investors, and tech leaders at SF's Moscone West from October 13-15. 来源：TechCrunch AI。",
-      "url": "https://techcrunch.com/2026/09/22/exhibitor-program-reopened-book-by-sept-30/",
-      "source": "TechCrunch AI",
-      "category": "community_hot",
+      "title": "首届中央企业量子人才科创空间产业应用创新大赛在合肥举办 中央企业发布真实业务场景需求",
+      "summary": "9月21日，首届中央企业量子人才科创空间产业应用创新大赛发布会在合肥举行",
+      "detail": "9月21日，首届中央企业量子人才科创空间产业应用创新大赛发布会在合肥举行 来源：量子位。",
+      "url": "https://www.qbitai.com/2026/09/493819.html",
+      "source": "量子位",
+      "category": "product_release",
       "tags": [],
-      "heat": 4,
+      "heat": 3,
       "date": "2026-09-23"
     },
     {
       "id": "11",
-      "title": "OpenAI wants to consult elite mathematicians about how to not fumble again",
-      "summary": "After turning a string of spectacular mathematical results into a reputational crisis, OpenAI is consulting human mathematicians to help it figure out a less disastrous path forward. On Monday, the co",
-      "detail": "After turning a string of spectacular mathematical results into a reputational crisis, OpenAI is consulting human mathematicians to help it figure out a less disastrous path forward. On Monday, the company announced a new independent panel of mathematicians tasked with advising it and other AI compa 来源：The Verge AI。",
-      "url": "https://www.theverge.com/ai-artificial-intelligence/999167/openai-elite-mathematicians-panel",
-      "source": "The Verge AI",
-      "category": "product_release",
+      "title": "从生成内容到创造体验，多模态大模型如何改变内容生产？",
+      "summary": "点击查看原文>",
+      "detail": "点击查看原文> 来源：InfoQ中文。",
+      "url": "https://www.infoq.cn/article/rNHK14OsBl5CgSpMoTPq?utm_source=rss&utm_medium=article",
+      "source": "InfoQ中文",
+      "category": "research_paper",
       "tags": [
-        "AI",
-        "OpenAI"
+        "多模态"
       ],
-      "heat": 5,
+      "heat": 3,
       "date": "2026-09-23"
     },
     {
       "id": "12",
-      "title": "Rabbit’s new AI agent doesn’t need an R1 to run",
-      "summary": "Rabbit, the company behind the underwhelming R1 device, is rolling out a standalone AI agent that you don't need its hardware to use, as reported earlier by Wired. The startup says its new OS3 \"agenti",
-      "detail": "Rabbit, the company behind the underwhelming R1 device, is rolling out a standalone AI agent that you don't need its hardware to use, as reported earlier by Wired. The startup says its new OS3 \"agentic operating system\" runs in the cloud but operates locally across Windows, Mac, and Linux devices. A 来源：The Verge AI。",
-      "url": "https://www.theverge.com/ai-artificial-intelligence/999094/rabbit-ai-agent-os3",
-      "source": "The Verge AI",
-      "category": "opensource",
+      "title": "不受控的 Agent ，凭什么上生产系统？",
+      "summary": "点击查看原文>",
+      "detail": "点击查看原文> 来源：InfoQ中文。",
+      "url": "https://www.infoq.cn/article/3TjH8fZziNB50Qzz9tJx?utm_source=rss&utm_medium=article",
+      "source": "InfoQ中文",
+      "category": "community_hot",
       "tags": [
-        "AI",
         "Agent"
       ],
-      "heat": 4,
+      "heat": 3,
       "date": "2026-09-23"
     },
     {
       "id": "13",
-      "title": "Andreessen Horowitz is launching an ‘academy’ with no homework and partnerships with Palantir, Google, and Meta",
-      "summary": "Venture capital firm Andreessen Horowitz (a16z) is creating an \"academy\" positioned as a pipeline for young people to build or join a Silicon Valley startup. The \"Horowitz Andreessen Academy\" will lau",
-      "detail": "Venture capital firm Andreessen Horowitz (a16z) is creating an \"academy\" positioned as a pipeline for young people to build or join a Silicon Valley startup. The \"Horowitz Andreessen Academy\" will launch with 10 partners, including Anduril, Anthropic, Coinbase, Google, Meta, Nvidia, OpenAI, Palantir 来源：The Verge AI。",
-      "url": "https://www.theverge.com/ai-artificial-intelligence/998813/andreessen-horowitz-ai-academy",
-      "source": "The Verge AI",
-      "category": "product_release",
+      "title": "Jotai 3.0 带来仅支持 ESM 的现代化包，摒弃旧版构建方式和已弃用 API",
+      "summary": "点击查看原文>",
+      "detail": "点击查看原文> 来源：InfoQ中文。",
+      "url": "https://www.infoq.cn/article/JkDJyKWiavXREdAWBvJk?utm_source=rss&utm_medium=article",
+      "source": "InfoQ中文",
+      "category": "community_hot",
       "tags": [
-        "AI",
-        "OpenAI",
-        "Anthropic",
-        "Google",
-        "Meta"
+        "AI"
       ],
-      "heat": 5,
+      "heat": 3,
       "date": "2026-09-23"
     },
     {
       "id": "14",
-      "title": "Anthropic launches Claude Opus 5.5 with stricter safeguards for cybersecurity",
-      "summary": "Anthropic says its new Claude Opus 5.5 model comes with stronger safeguards in the wake of recent rogue AI hacking incidents. In an announcement on Tuesday, Anthropic says Opus 5.5 comes with improvem",
-      "detail": "Anthropic says its new Claude Opus 5.5 model comes with stronger safeguards in the wake of recent rogue AI hacking incidents. In an announcement on Tuesday, Anthropic says Opus 5.5 comes with improvements to certain risky behaviors, including attempts to escape the company's testing sandbox. It's th 来源：The Verge AI。",
-      "url": "https://www.theverge.com/ai-artificial-intelligence/998868/anthropic-claude-opus-5-5-cybersecurity",
-      "source": "The Verge AI",
-      "category": "product_release",
+      "title": "Meta 开源 Astryx：面向 Agent 的 React 设计系统",
+      "summary": "点击查看原文>",
+      "detail": "点击查看原文> 来源：InfoQ中文。",
+      "url": "https://www.infoq.cn/article/He6bUhlNIuPEa99GGRYC?utm_source=rss&utm_medium=article",
+      "source": "InfoQ中文",
+      "category": "opensource",
       "tags": [
-        "AI",
-        "Anthropic",
-        "Claude"
+        "Meta",
+        "Agent",
+        "开源"
       ],
-      "heat": 5,
+      "heat": 4,
       "date": "2026-09-23"
     },
     {
       "id": "15",
-      "title": "Trump says the US is officially renaming AI to ‘super intelligence’",
-      "summary": "In a speech Tuesday morning at the UN General Assembly, Donald Trump railed against Iran, \"globalists,\" climate change, and transgender people while also claiming that the US is now \"officially\" renam",
-      "detail": "In a speech Tuesday morning at the UN General Assembly, Donald Trump railed against Iran, \"globalists,\" climate change, and transgender people while also claiming that the US is now \"officially\" renaming artificial intelligence to \"super intelligence.\" Oddly, this wasn't one of the entries in the po 来源：The Verge AI。",
-      "url": "https://www.theverge.com/ai-artificial-intelligence/998816/donald-trump-ai-super-intelligence",
-      "source": "The Verge AI",
+      "title": "从 AI 工具到经营智能体：快手分销增长 Agent 实践",
+      "summary": "点击查看原文>",
+      "detail": "点击查看原文> 来源：InfoQ中文。",
+      "url": "https://www.infoq.cn/article/7suOC8BJWYA4yx6dvZXa?utm_source=rss&utm_medium=article",
+      "source": "InfoQ中文",
       "category": "community_hot",
       "tags": [
-        "AI"
+        "AI",
+        "Agent"
       ],
-      "heat": 4,
+      "heat": 3,
       "date": "2026-09-23"
     },
     {
       "id": "16",
-      "title": "Meta patches Muse exploit that let attackers control the AI agent",
-      "summary": "Meta has issued a patch for its Muse macOS app following the discovery of a zero-day vulnerability that could allow someone to take control of the AI agent. The bug found by security researcher Patric",
-      "detail": "Meta has issued a patch for its Muse macOS app following the discovery of a zero-day vulnerability that could allow someone to take control of the AI agent. The bug found by security researcher Patrick Wardle utilized an undocumented Muse setting that enabled potential attackers running local code t 来源：The Verge AI。",
-      "url": "https://www.theverge.com/tech/998679/meta-muse-patch-zero-day-exploit-ai-agent",
-      "source": "The Verge AI",
-      "category": "research_paper",
+      "title": "AI Coding 贡献率超 90%，需求交付却只快了 10%：菜鸟如何用 Agent 托管端到端交付？",
+      "summary": "点击查看原文>",
+      "detail": "点击查看原文> 来源：InfoQ中文。",
+      "url": "https://www.infoq.cn/article/XPo33yALUEeIsBhQ4zGI?utm_source=rss&utm_medium=article",
+      "source": "InfoQ中文",
+      "category": "community_hot",
       "tags": [
         "AI",
-        "Meta",
         "Agent"
       ],
-      "heat": 5,
+      "heat": 3,
       "date": "2026-09-23"
     },
     {
       "id": "17",
-      "title": "California tightens rules on AI data center energy and water use",
-      "summary": "California Gov. Gavin Newsom has signed seven bills designed to prevent AI data centers from passing utility costs onto residents, as reported earlier by the Los Angeles Times. The package of laws req",
-      "detail": "California Gov. Gavin Newsom has signed seven bills designed to prevent AI data centers from passing utility costs onto residents, as reported earlier by the Los Angeles Times. The package of laws requires the California Public Utilities Commission to introduce a new rate classification for data cen 来源：The Verge AI。",
-      "url": "https://www.theverge.com/ai-artificial-intelligence/998453/california-ai-data-center-bills",
-      "source": "The Verge AI",
-      "category": "regulation",
-      "tags": [
-        "AI"
-      ],
-      "heat": 4,
+      "title": "Netflix 重构 Conductor，以支持每月 4.2 亿次的工作流执行以及 10 倍规模的工作流",
+      "summary": "点击查看原文>",
+      "detail": "点击查看原文> 来源：InfoQ中文。",
+      "url": "https://www.infoq.cn/article/MejovdhJpA8y4wbWlTMU?utm_source=rss&utm_medium=article",
+      "source": "InfoQ中文",
+      "category": "community_hot",
+      "tags": [],
+      "heat": 3,
       "date": "2026-09-23"
     },
     {
       "id": "18",
-      "title": "Can John Ternus find Apple’s next big thing?",
-      "summary": "Today, I’m talking with Mark Gurman, who is the world’s best-sourced Apple reporter — both as Bloomberg’s chief Apple correspondent and the host of the upcoming podcast Power On.&#160; Earlier this mo",
-      "detail": "Today, I’m talking with Mark Gurman, who is the world’s best-sourced Apple reporter — both as Bloomberg’s chief Apple correspondent and the host of the upcoming podcast Power On.&#160; Earlier this month, Apple hosted its annual iPhone hardware event, virtually every detail of which was reported ahe 来源：The Verge AI。",
-      "url": "https://www.theverge.com/podcast/996874/apple-john-ternus-tim-cook-mark-gurman-future-ai-siri-iphone",
-      "source": "The Verge AI",
-      "category": "community_hot",
+      "title": "华为云码道面向鸿蒙开发者升级：上线鸿蒙编码大模型，覆盖开发到编译全流程",
+      "summary": "点击查看原文>",
+      "detail": "点击查看原文> 来源：InfoQ中文。",
+      "url": "https://www.infoq.cn/article/jCdqhiUJHJlVgOYGfWGx?utm_source=rss&utm_medium=article",
+      "source": "InfoQ中文",
+      "category": "product_release",
       "tags": [
-        "AI"
+        "编码"
       ],
-      "heat": 4,
+      "heat": 3,
       "date": "2026-09-23"
     },
     {
       "id": "19",
-      "title": "iPhone owners can now submit claims in Apple’s $250 million Siri AI settlement",
-      "summary": "Apple is paying $250 million to settle claims that it failed to deliver an AI-upgraded Siri - and now, eligible iPhone owners can submit a claim for a payout. If you live in the US and purchased an iP",
-      "detail": "Apple is paying $250 million to settle claims that it failed to deliver an AI-upgraded Siri - and now, eligible iPhone owners can submit a claim for a payout. If you live in the US and purchased an iPhone 15 Pro, iPhone 15 Pro Max, or any iPhone 16 model between June 10th, 2024, and [&#8230;] 来源：The Verge AI。",
-      "url": "https://www.theverge.com/tech/998191/apple-siri-ai-iphone-16-class-action-lawsuit-settlement",
-      "source": "The Verge AI",
+      "title": "阿里吴泳铭：千问将训练5-10万亿参数规模的新模型",
+      "summary": "点击查看原文>",
+      "detail": "点击查看原文> 来源：InfoQ中文。",
+      "url": "https://www.infoq.cn/article/L9QQKUgo3DEjschVRKD9?utm_source=rss&utm_medium=article",
+      "source": "InfoQ中文",
       "category": "research_paper",
       "tags": [
-        "AI"
+        "训练"
       ],
-      "heat": 4,
+      "heat": 3,
       "date": "2026-09-23"
     },
     {
       "id": "20",
-      "title": "UN says AI safeguards can’t wait for certainty",
-      "summary": "Governments need to rein in increasingly capable AI agents before their risks are fully understood, a United Nations scientific panel warned in the global organization's first major assessment of Open",
-      "detail": "Governments need to rein in increasingly capable AI agents before their risks are fully understood, a United Nations scientific panel warned in the global organization's first major assessment of OpenAI's hack of Hugging Face earlier this year. The report cements AI's place on the global diplomatic  来源：The Verge AI。",
-      "url": "https://www.theverge.com/ai-artificial-intelligence/998090/un-ai-panel-hugging-face-hack-precautionary-principle",
-      "source": "The Verge AI",
+      "title": "NVIDIA Personal AI Router 将 AI 任务分配到本地计算资源上",
+      "summary": "点击查看原文>",
+      "detail": "点击查看原文> 来源：InfoQ中文。",
+      "url": "https://www.infoq.cn/article/ZSAtWPoOgIDcANYa8CXc?utm_source=rss&utm_medium=article",
+      "source": "InfoQ中文",
       "category": "community_hot",
       "tags": [
         "AI",
-        "OpenAI",
-        "Agent"
+        "NVIDIA"
       ],
-      "heat": 5,
+      "heat": 4,
       "date": "2026-09-23"
     }
   ]
