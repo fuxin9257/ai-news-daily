@@ -177,7 +177,7 @@
     }
     if (!state.data) return;
     const d = state.data;
-    var actualItems = d.items ? d.items.filter(function(item) { return !item.date || item.date === state.currentDate; }) : [];
+    var actualItems = d.items ? d.items.slice() : [];
     el.statsBar.innerHTML =
       '<span class="stat-item">共 <span class="stat-value">' + actualItems.length + '</span> 条</span>' +
       '<span class="stat-item">5星 <span class="stat-value">' + actualItems.filter(function(i) { return i.heat === 5; }).length + '</span></span>' +
@@ -245,10 +245,7 @@
     if (state.isSearchMode && state.allItems) {
       items = state.allItems.slice();
     } else if (state.data && state.data.items) {
-      // Filter to only show items matching the current date
-      items = state.data.items.filter(function(item) {
-        return !item.date || item.date === state.currentDate;
-      });
+      items = state.data.items.slice();
     } else {
       return [];
     }
