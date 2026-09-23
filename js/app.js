@@ -70,7 +70,7 @@
         return;
       }
       const script = document.createElement('script');
-      script.src = 'data/' + dateStr + '.js';
+      script.src = 'data/' + dateStr + '.js?v=' + Date.now();
       script.onload = function() {
         if (window.NEWS_DATA && window.NEWS_DATA[dateStr]) {
           resolve(window.NEWS_DATA[dateStr]);
