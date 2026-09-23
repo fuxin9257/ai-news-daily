@@ -1,417 +1,290 @@
 #!/usr/bin/env python3
 """
 AI News Daily - Automated News Collection Script
-Runs in GitHub Actions, collects AI news from multiple sources and generates data files.
-
-Sources:
-  - RSS feeds (TechCrunch AI, The Verge AI, Ars Technica, MIT Tech Review, VentureBeat AI)
-  - HackerNews API (AI-filtered top stories)
-  - GitHub Search API (trending AI/LLM repos)
-
-Output:
-  - data/YYYY-MM-DD.js (news data for the website)
-  - data/manifest.js (updated date list and counts)
+Runs in GitHub Actions. Collects AI news, fetches article content for
+detailed summaries, translates to Chinese, generates data files.
 """
 
-import json
-import os
-import re
-import sys
-import time
-import datetime
-import urllib.request
-import urllib.parse
+import json, os, re, time, datetime, urllib.request, urllib.parse
 from collections import Counter
 
-# ── Configuration ──────────────────────────────────────────────────────────
-DATA_DIR = os.path.join(
-    os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "data"
-)
-TZ_BEIJING = datetime.timezone(datetime.timedelta(hours=8))
-TODAY = datetime.datetime.now(TZ_BEIJING).strftime("%Y-%m-%d")
+DATA_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "data")
+TZ = datetime.timezone(datetime.timedelta(hours=8))
+TODAY = datetime.datetime.now(TZ).strftime("%Y-%m-%d")
 MAX_ITEMS = 20
 
-# Chinese RSS feeds (native Chinese content, no translation needed)
 CHINESE_RSS = [
     ("量子位", "https://www.qbitai.com/feed"),
     ("机器之心", "https://www.jiqizhixin.com/rss"),
     ("36氪", "https://36kr.com/feed"),
-    ("InfoQ中文", "https://www.infoq.cn/feed"),
     ("极客公园", "https://www.geekpark.net/rss"),
 ]
-
-# English RSS feeds (will be translated to Chinese)
 ENGLISH_RSS = [
     ("TechCrunch AI", "https://techcrunch.com/category/artificial-intelligence/feed/"),
     ("The Verge AI", "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml"),
-    ("Ars Technica", "https://feeds.arstechnica.com/arstechnica/features"),
+    ("Ars Technica AI", "https://arstechnica.com/ai/feed/"),
     ("MIT Tech Review", "https://www.technologyreview.com/feed/"),
 ]
 
-# Category keyword mapping
+AI_STRICT = [
+    "ai","artificial intelligence","llm","gpt","claude","gemini","openai","anthropic",
+    "machine learning","deep learning","neural","transformer","diffusion","agent",
+    "chatbot","generative","model","robot","芯片","大模型","人工智能","机器学习",
+    "深度学习","智能体","推理","训练","微调","多模态","编程","编码","qwen",
+    "deepseek","千问","通义","豆包","文心","混元","英伟达","nvidia","gpu","算力",
+]
+BAD_SUMMARIES = ["点击查看原文","查看原文","read more","continue reading","..."]
+
 CATEGORY_KEYWORDS = {
-    "product_release": [
-        "launch", "release", "announce", "unveil", "ship", "roll out",
-        "推出", "发布", "上线", "新一代",
-    ],
-    "funding": [
-        "funding", "raises", "seed", "series a", "series b", "series c",
-        "acquire", "ipo", "valuation", "融资", "收购", "投资", "估值",
-    ],
-    "research_paper": [
-        "paper", "research", "study", "benchmark", "model", "arxiv",
-        "论文", "研究", "模型", "预印本",
-    ],
-    "opensource": [
-        "open source", "github", "oss", "开源", "仓库", "release",
-    ],
-    "regulation": [
-        "regulation", "policy", "law", "ban", "compliance", "executive order",
-        "监管", "政策", "法律", "法规", "法案",
-    ],
-    "community_hot": [
-        "viral", "trending", "popular", "debate", "controversy", "backlash",
-        "热门", "争议", "刷屏",
-    ],
+    "product_release": ["launch","release","announce","unveil","ship","roll out","推出","发布","上线","新一代","开源","首发"],
+    "funding": ["funding","raises","seed","series a","series b","series c","acquire","ipo","valuation","融资","收购","投资","估值","亿元"],
+    "research_paper": ["paper","research","study","benchmark","arxiv","论文","研究","模型","预印本","实验","新架构"],
+    "opensource": ["open source","github","oss","开源","仓库"],
+    "regulation": ["regulation","policy","law","ban","compliance","监管","政策","法律","法规","法案","安全"],
+    "community_hot": ["viral","trending","popular","debate","controversy","热门","争议","刷屏","爆火"],
 }
+TAG_TERMS = ["AI","LLM","OpenAI","Anthropic","Google","Meta","Microsoft","NVIDIA","GPT","Claude","Gemini","Agent","开源","AI安全","芯片","机器人","自动驾驶","多模态","推理","训练","微调","RAG","MCP","编程","编码","监管","大模型","DeepSeek","千问"]
 
-# AI-related keywords for filtering HackerNews
-AI_KEYWORDS = [
-    "ai", "artificial intelligence", "llm", "gpt", "claude", "gemini",
-    "openai", "anthropic", "machine learning", "deep learning", "neural",
-    "transformer", "diffusion", "agent", "chatbot", "generative", "model",
-    "大模型", "人工智能", "机器学习",
-]
+def fetch_url(url, timeout=12):
+    req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 (compatible; AI-News-Bot/1.0)", "Accept": "*/*"})
+    with urllib.request.urlopen(req, timeout=timeout) as r:
+        return r.read().decode("utf-8", errors="replace")
 
-# Tag extraction terms
-TAG_TERMS = [
-    "AI", "LLM", "OpenAI", "Anthropic", "Google", "Meta", "Microsoft",
-    "NVIDIA", "GPT", "Claude", "Gemini", "Agent", "开源", "AI安全",
-    "芯片", "机器人", "自动驾驶", "多模态", "推理", "训练", "微调",
-    "RAG", "MCP", "Function Calling", "编程", "编码", "监管",
-]
+def is_ai_related(title):
+    t = title.lower()
+    return any(kw in t for kw in AI_STRICT)
 
+def is_bad_summary(s):
+    s = s.strip()
+    if len(s) < 20: return True
+    return any(bad in s for bad in BAD_SUMMARIES)
 
-# ── HTTP helper ────────────────────────────────────────────────────────────
-def fetch_url(url, timeout=15):
-    """Fetch URL content with a browser-like User-Agent."""
-    req = urllib.request.Request(
-        url,
-        headers={
-            "User-Agent": "Mozilla/5.0 (compatible; AI-News-Bot/1.0; +https://github.com/fuxin9257/ai-news-daily)",
-            "Accept": "application/rss+xml, application/xml, text/xml, application/json, */*",
-        },
-    )
-    with urllib.request.urlopen(req, timeout=timeout) as resp:
-        return resp.read().decode("utf-8", errors="replace")
-
-
-
-# ── Translation (MyMemory free API) ────────────────────────────────────────
 def translate_to_chinese(text):
-    """Translate English text to Chinese using MyMemory free translation API."""
-    if not text or not text.strip():
-        return text
-    chinese_chars = len(re.findall(r'[\u4e00-\u9fff]', text))
-    if chinese_chars > len(text) * 0.3:
-        return text
+    if not text or not text.strip(): return text
+    chinese = len(re.findall(r"[\u4e00-\u9fff]", text))
+    if chinese > len(text) * 0.3: return text
     try:
         chunk = text[:480]
-        encoded = urllib.parse.quote(chunk)
-        url = f"https://api.mymemory.translated.net/get?q={encoded}&langpair=en|zh-CN"
+        enc = urllib.parse.quote(chunk)
+        url = "https://api.mymemory.translated.net/get?q=" + enc + "&langpair=en|zh-CN"
         result = json.loads(fetch_url(url, timeout=10))
         translated = result.get("responseData", {}).get("translatedText", "")
-        if translated and translated != chunk:
-            return translated
-    except Exception as e:
-        print(f"    [TRANSLATE WARN] {e}")
+        if translated and translated != chunk: return translated
+    except: pass
     return text
-# ── RSS feed fetching ─────────────────────────────────────────────────────
-def fetch_rss_feed(name, url, lang="zh"):
-    """Fetch and parse an RSS feed. lang='zh' for Chinese, 'en' for English."""
-    try:
-        import feedparser
-    except ImportError:
-        print("  [WARN] feedparser not installed")
-        return []
 
+def extract_article_content(url, max_chars=400):
+    try:
+        html = fetch_url(url, timeout=10)
+        html = re.sub(r"<script[^>]*>.*?</script>", "", html, flags=re.DOTALL|re.IGNORECASE)
+        html = re.sub(r"<style[^>]*>.*?</style>", "", html, flags=re.DOTALL|re.IGNORECASE)
+        paragraphs = re.findall(r"<p[^>]*>(.*?)</p>", html, re.DOTALL|re.IGNORECASE)
+        texts = []
+        for p in paragraphs:
+            t = re.sub(r"<[^>]+>", "", p).strip()
+            t = re.sub(r"\s+", " ", t)
+            if len(t) > 40 and not any(skip in t.lower() for skip in ["subscribe","newsletter","cookie","copyright","advertisement"]):
+                texts.append(t)
+            if sum(len(x) for x in texts) >= max_chars: break
+        if texts:
+            content = " ".join(texts)[:max_chars]
+            for punct in ["。","！","？",".","!","?"]:
+                idx = content.rfind(punct)
+                if idx > 100:
+                    content = content[:idx+1]
+                    break
+            return content
+    except: pass
+    return ""
+
+def fetch_rss(name, url, lang="zh"):
+    try: import feedparser
+    except: return []
     try:
         feed = feedparser.parse(url)
         items = []
-        for entry in feed.entries[:10]:
-            title = entry.get("title", "").strip()
-            link = entry.get("link", "").strip()
-            summary = re.sub(r"<[^>]+>", "", entry.get("summary", "")).strip()
+        for entry in feed.entries[:15]:
+            title = entry.get("title","").strip()
+            link = entry.get("link","").strip()
+            summary = re.sub(r"<[^>]+>", "", entry.get("summary","")).strip()
             summary = re.sub(r"\s+", " ", summary)[:300]
-            if title and link:
-                if lang == "en":
-                    title = translate_to_chinese(title)
-                    summary = translate_to_chinese(summary)
-                    time.sleep(0.3)
-                items.append({
-                    "title": title,
-                    "url": link,
-                    "source": name,
-                    "summary": summary,
-                    "lang": lang,
-                })
+            if not title or not link: continue
+            if not is_ai_related(title): continue
+            if lang == "en":
+                title = translate_to_chinese(title)
+                time.sleep(0.2)
+            items.append({"title": title, "url": link, "source": name, "rss_summary": summary, "lang": lang})
         return items
     except Exception as e:
-        print(f"  [WARN] Failed to fetch {name}: {e}")
+        print("  [WARN] " + name + ": " + str(e))
         return []
 
-
-# ── HackerNews fetching ────────────────────────────────────────────────────
 def fetch_hackernews():
-    """Fetch top AI-related stories from HackerNews API."""
     try:
-        data = json.loads(fetch_url(
-            "https://hacker-news.firebaseio.com/v0/topstories.json"
-        ))
+        data = json.loads(fetch_url("https://hacker-news.firebaseio.com/v0/topstories.json"))
         items = []
-        for story_id in data[:40]:
+        for sid in data[:50]:
             try:
-                story = json.loads(fetch_url(
-                    f"https://hacker-news.firebaseio.com/v0/item/{story_id}.json",
-                    timeout=8,
-                ))
-                if not story or story.get("type") != "story":
-                    continue
-                title = story.get("title", "").strip()
-                text_lower = title.lower()
-                if any(kw in text_lower for kw in AI_KEYWORDS):
-                    score = story.get("score", 0)
-                    translated_title = translate_to_chinese(title)
-                    items.append({
-                        "title": translated_title,
-                        "url": story.get("url", f"https://news.ycombinator.com/item?id={story_id}"),
-                        "source": "HackerNews",
-                        "summary": f"HN 热度: {score} 赞 / {story.get('descendants', 0)} 评论",
-                        "score": score,
-                        "lang": "en",
-                    })
-                    time.sleep(0.3)
-            except Exception:
-                continue
+                s = json.loads(fetch_url("https://hacker-news.firebaseio.com/v0/item/" + str(sid) + ".json", timeout=8))
+                if not s or s.get("type") != "story": continue
+                title = s.get("title","").strip()
+                score = s.get("score", 0)
+                if not is_ai_related(title.lower()): continue
+                t_title = translate_to_chinese(title)
+                items.append({"title": t_title, "url": s.get("url","https://news.ycombinator.com/item?id="+str(sid)), "source": "HackerNews", "rss_summary": "HN热度" + str(score) + "赞/" + str(s.get("descendants",0)) + "评论", "score": score, "lang": "en"})
+                time.sleep(0.2)
+            except: continue
         items.sort(key=lambda x: x.get("score", 0), reverse=True)
-        return items[:8]
+        return items[:6]
     except Exception as e:
-        print(f"  [WARN] Failed to fetch HackerNews: {e}")
+        print("  [WARN] HN: " + str(e))
         return []
 
-
-# ── GitHub trending ───────────────────────────────────────────────────────
-def fetch_github_trending():
-    """Fetch recently updated AI/LLM repos from GitHub Search API."""
+def fetch_github():
     try:
-        since = (datetime.datetime.now() - datetime.timedelta(days=2)).strftime("%Y-%m-%d")
-        query = f"topic:ai topic:llm pushed:>{since}"
-        url = (
-            f"https://api.github.com/search/repositories"
-            f"?q={urllib.parse.quote(query)}&sort=stars&order=desc&per_page=8"
-        )
+        since = (datetime.datetime.now() - datetime.timedelta(days=3)).strftime("%Y-%m-%d")
+        q = "topic:ai topic:llm pushed:>" + since
+        url = "https://api.github.com/search/repositories?q=" + urllib.parse.quote(q) + "&sort=stars&order=desc&per_page=6"
         data = json.loads(fetch_url(url))
         items = []
         for repo in data.get("items", []):
             desc = repo.get("description") or "No description"
-            translated_desc = translate_to_chinese(desc)
-            items.append({
-                "title": f"{repo['full_name']}: {translated_desc}",
-                "url": repo["html_url"],
-                "source": "GitHub Trending",
-                "summary": (
-                    f"Stars: {repo['stargazers_count']:,} | "
-                    f"语言: {repo.get('language') or 'Unknown'} | "
-                    f"更新: {repo.get('pushed_at', '')[:10]}"
-                ),
-                "stars": repo["stargazers_count"],
-                "lang": "en",
-            })
-            time.sleep(0.2)
+            t_desc = translate_to_chinese(desc)
+            items.append({"title": repo["full_name"] + ": " + t_desc, "url": repo["html_url"], "source": "GitHub Trending", "rss_summary": "Star " + format(repo["stargazers_count"], ",") + " | " + (repo.get("language") or "?") + " | " + repo.get("pushed_at","")[:10], "stars": repo["stargazers_count"], "lang": "en"})
+            time.sleep(0.1)
         return items
     except Exception as e:
-        print(f"  [WARN] Failed to fetch GitHub trending: {e}")
+        print("  [WARN] GitHub: " + str(e))
         return []
 
-
-# ── Classification helpers ─────────────────────────────────────────────────
-def classify_category(title, summary):
+def classify(title, summary):
     text = (title + " " + summary).lower()
-    for cat, keywords in CATEGORY_KEYWORDS.items():
-        if any(kw.lower() in text for kw in keywords):
-            return cat
+    for cat, kws in CATEGORY_KEYWORDS.items():
+        if any(kw.lower() in text for kw in kws): return cat
     return "community_hot"
 
-
-def estimate_heat(title, summary, score=0, stars=0):
-    """Heuristic heat estimation (1-5 stars)."""
-    heat = 3
-    text_len = len(title) + len(summary)
-    if text_len > 200:
-        heat = 4
-    if text_len > 400:
-        heat = 5
-    # HN score boost
-    if score > 200:
-        heat = max(heat, 4)
-    if score > 500:
-        heat = 5
-    # GitHub stars boost
-    if stars > 5000:
-        heat = max(heat, 4)
-    if stars > 20000:
-        heat = 5
-    # Big-name boost
-    big_names = ["openai", "anthropic", "google", "meta", "microsoft", "nvidia", "deepseek"]
-    if any(name in (title + summary).lower() for name in big_names):
-        heat = min(5, heat + 1)
-    return min(5, max(1, heat))
-
+def heat_score(title, summary, score=0, stars=0):
+    h = 3
+    tl = len(title) + len(summary)
+    if tl > 100: h = 4
+    if tl > 200: h = 5
+    if score > 200: h = max(h, 4)
+    if score > 500: h = 5
+    if stars > 5000: h = max(h, 4)
+    if stars > 20000: h = 5
+    big = ["openai","anthropic","google","meta","microsoft","nvidia","deepseek","qwen"]
+    if any(n in (title+summary).lower() for n in big): h = min(5, h+1)
+    return min(5, max(1, h))
 
 def extract_tags(title, summary):
     text = (title + " " + summary).lower()
-    tags = [t for t in TAG_TERMS if t.lower() in text]
-    return tags[:5]
+    return [t for t in TAG_TERMS if t.lower() in text][:5]
 
-
-# ── Main pipeline ───────────────────────────────────────────────────────────
 def main():
-    print(f"=== AI News Daily Collection: {TODAY} ===")
-    print(f"Time: {datetime.datetime.now(TZ_BEIJING).isoformat()}")
-
+    print("=== AI News Daily: " + TODAY + " ===")
     all_items = []
-
-    # 1. Chinese RSS feeds (no translation needed)
-    print("\n[1/4] Fetching Chinese RSS feeds...")
+    print("\n[1/4] Chinese RSS...")
     for name, url in CHINESE_RSS:
-        items = fetch_rss_feed(name, url, lang="zh")
-        print(f"  {name}: {len(items)} items")
+        items = fetch_rss(name, url, "zh")
+        print("  " + name + ": " + str(len(items)))
         all_items.extend(items)
-
-    # 2. English RSS feeds (auto-translate to Chinese)
-    print("\n[2/4] Fetching English RSS feeds (translating to Chinese)...")
+    print("\n[2/4] English RSS (translating)...")
     for name, url in ENGLISH_RSS:
-        items = fetch_rss_feed(name, url, lang="en")
-        print(f"  {name}: {len(items)} items")
+        items = fetch_rss(name, url, "en")
+        print("  " + name + ": " + str(len(items)))
         all_items.extend(items)
+    print("\n[3/4] HackerNews...")
+    hn = fetch_hackernews()
+    print("  HN: " + str(len(hn)))
+    all_items.extend(hn)
+    print("\n[4/4] GitHub...")
+    gh = fetch_github()
+    print("  GitHub: " + str(len(gh)))
+    all_items.extend(gh)
 
-    # 3. HackerNews
-    print("\n[3/4] Fetching HackerNews (translating)...")
-    hn_items = fetch_hackernews()
-    print(f"  HackerNews: {len(hn_items)} AI stories")
-    all_items.extend(hn_items)
-
-    # 4. GitHub trending
-    print("\n[4/4] Fetching GitHub trending (translating)...")
-    gh_items = fetch_github_trending()
-    print(f"  GitHub: {len(gh_items)} trending repos")
-    all_items.extend(gh_items)
-
-    # Deduplicate by URL
     seen = set()
     unique = []
-    for item in all_items:
-        u = item.get("url", "")
+    for it in all_items:
+        u = it.get("url","")
         if u and u not in seen:
             seen.add(u)
-            unique.append(item)
+            unique.append(it)
+    print("\nUnique AI items: " + str(len(unique)))
 
-    print(f"\nTotal unique items: {len(unique)}")
-
-    # Process into news items
     news_items = []
-    for i, item in enumerate(unique[:MAX_ITEMS], 1):
+    for item in unique[:MAX_ITEMS*2]:
+        if len(news_items) >= MAX_ITEMS: break
         title = item["title"]
-        summary = item.get("summary", "")
+        rss_sum = item.get("rss_summary", "")
+        if is_bad_summary(rss_sum) and item.get("source") not in ["HackerNews","GitHub Trending"]:
+            print("  Fetching: " + title[:40] + "...")
+            content = extract_article_content(item["url"])
+            time.sleep(0.3)
+            if content and len(content) > 80:
+                summary = content[:200]
+                detail = content[:400]
+                if item.get("lang") == "en":
+                    summary = translate_to_chinese(summary)
+                    detail = translate_to_chinese(detail)
+                    time.sleep(0.2)
+            else:
+                continue
+        else:
+            summary = rss_sum[:200]
+            if len(rss_sum) < 100 and item.get("source") not in ["HackerNews","GitHub Trending"]:
+                print("  Fetching detail: " + title[:40] + "...")
+                content = extract_article_content(item["url"])
+                time.sleep(0.3)
+                if content and len(content) > 80:
+                    detail = content[:400]
+                    if item.get("lang") == "en":
+                        detail = translate_to_chinese(detail)
+                        time.sleep(0.2)
+                else:
+                    detail = rss_sum[:300] + " 来源：" + item.get("source","") + "。"
+            else:
+                detail = rss_sum[:300] + " 来源：" + item.get("source","") + "。"
         tags = extract_tags(title, summary)
-        category = classify_category(title, summary)
-        heat = estimate_heat(
-            title, summary,
-            score=item.get("score", 0),
-            stars=item.get("stars", 0),
-        )
+        cat = classify(title, summary)
+        heat = heat_score(title, summary, item.get("score",0), item.get("stars",0))
+        news_items.append({"id": str(len(news_items)+1), "title": title, "summary": summary[:200], "detail": detail, "url": item["url"], "source": item.get("source",""), "category": cat, "tags": tags, "heat": heat, "date": TODAY})
 
-        # Build detail: summary + source attribution
-        detail = summary[:300]
-        if len(summary) > 300:
-            detail = summary[:300].rsplit("。", 1)[0] + "。"
-        detail += f" 来源：{item.get('source', '')}。"
+    cat_counts = Counter(x["category"] for x in news_items)
+    cats = {c: cat_counts.get(c, 0) for c in ["product_release","research_paper","funding","opensource","regulation","community_hot"]}
+    data = {"date": TODAY, "generated_at": datetime.datetime.now(TZ).isoformat(), "time_window": "past_24h", "total_count": len(news_items), "categories": cats, "items": news_items}
 
-        news_items.append({
-            "id": str(i),
-            "title": title,
-            "summary": summary[:200],
-            "detail": detail,
-            "url": item["url"],
-            "source": item.get("source", "Unknown"),
-            "category": category,
-            "tags": tags,
-            "heat": heat,
-            "date": TODAY,
-        })
-
-    # Category counts
-    cat_counts = Counter(item["category"] for item in news_items)
-    categories = {cat: cat_counts.get(cat, 0) for cat in
-                  ["product_release", "research_paper", "funding",
-                   "opensource", "regulation", "community_hot"]}
-
-    # Build data object
-    data = {
-        "date": TODAY,
-        "generated_at": datetime.datetime.now(TZ_BEIJING).isoformat(),
-        "time_window": "past_24h",
-        "total_count": len(news_items),
-        "categories": categories,
-        "items": news_items,
-    }
-
-    # Write data file
     os.makedirs(DATA_DIR, exist_ok=True)
-    data_file = os.path.join(DATA_DIR, f"{TODAY}.js")
+    data_file = os.path.join(DATA_DIR, TODAY + ".js")
     with open(data_file, "w", encoding="utf-8") as f:
         f.write("window.NEWS_DATA = window.NEWS_DATA || {};\n")
-        f.write(f"window.NEWS_DATA['{TODAY}'] = ")
+        f.write("window.NEWS_DATA['" + TODAY + "'] = ")
         json.dump(data, f, ensure_ascii=False, indent=2)
         f.write(";\n")
-    print(f"\nWritten: {data_file} ({len(news_items)} items)")
+    print("\nWritten: " + data_file + " (" + str(len(news_items)) + " items)")
 
-    # Update manifest
-    manifest_file = os.path.join(DATA_DIR, "manifest.js")
-    existing_dates = []
-    existing_counts = {}
-    if os.path.exists(manifest_file):
-        with open(manifest_file, "r", encoding="utf-8") as f:
-            content = f.read()
-        dates_match = re.search(r"dates:\s*\[([^\]]+)\]", content)
-        if dates_match:
-            existing_dates = [
-                d.strip().strip("'\"") for d in dates_match.group(1).split(",") if d.strip()
-            ]
-        counts_match = re.search(r"counts:\s*\{([^}]+)\}", content)
-        if counts_match:
-            for k, v in re.findall(r"'([^']+)':\s*(\d+)", counts_match.group(1)):
-                existing_counts[k] = int(v)
-
-    if TODAY not in existing_dates:
-        existing_dates.append(TODAY)
-    existing_dates.sort()
-    existing_counts[TODAY] = len(news_items)
-
-    with open(manifest_file, "w", encoding="utf-8") as f:
-        f.write("// AI News Daily - 数据清单 (auto-updated by GitHub Actions)\n")
+    mf = os.path.join(DATA_DIR, "manifest.js")
+    dates, counts = [], {}
+    if os.path.exists(mf):
+        c = open(mf, "r", encoding="utf-8").read()
+        m = re.search(r"dates:\s*\[([^\]]+)\]", c)
+        if m: dates = [d.strip().strip("'\"") for d in m.group(1).split(",") if d.strip()]
+        m2 = re.search(r"counts:\s*\{([^}]+)\}", c)
+        if m2:
+            for k, v in re.findall(r"'([^']+)':\s*(\d+)", m2.group(1)):
+                counts[k] = int(v)
+    if TODAY not in dates: dates.append(TODAY)
+    dates.sort()
+    counts[TODAY] = len(news_items)
+    with open(mf, "w", encoding="utf-8") as f:
+        f.write("// AI News Daily - auto-updated by GitHub Actions\n")
         f.write("window.NEWS_MANIFEST = {\n")
-        f.write("  dates: [" + ", ".join(f"'{d}'" for d in existing_dates) + "],\n")
-        f.write(f"  latest: '{existing_dates[-1]}',\n")
+        f.write("  dates: [" + ", ".join("'" + d + "'" for d in dates) + "],\n")
+        f.write("  latest: '" + dates[-1] + "',\n")
         f.write("  counts: {\n")
-        for idx, d in enumerate(existing_dates):
-            comma = "," if idx < len(existing_dates) - 1 else ""
-            f.write(f"    '{d}': {existing_counts.get(d, 0)}{comma}\n")
+        for i, d in enumerate(dates):
+            f.write("    '" + d + "': " + str(counts.get(d,0)) + ("," if i < len(dates)-1 else "") + "\n")
         f.write("  }\n};\n")
-    print(f"Updated: {manifest_file}")
-
-    print(f"\n=== Collection complete: {len(news_items)} news items for {TODAY} ===")
-
+    print("Done: " + str(len(news_items)) + " items")
 
 if __name__ == "__main__":
     main()
