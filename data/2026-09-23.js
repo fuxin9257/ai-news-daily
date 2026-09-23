@@ -1,314 +1,325 @@
 window.NEWS_DATA = window.NEWS_DATA || {};
 window.NEWS_DATA['2026-09-23'] = {
   "date": "2026-09-23",
-  "generated_at": "2026-09-23T09:05:44.089986+08:00",
+  "generated_at": "2026-09-23T09:15:59.220070+08:00",
   "time_window": "past_24h",
   "total_count": 20,
   "categories": {
-    "product_release": 11,
-    "research_paper": 3,
-    "funding": 1,
-    "opensource": 1,
-    "regulation": 0,
-    "community_hot": 4
+    "product_release": 6,
+    "research_paper": 2,
+    "funding": 4,
+    "opensource": 2,
+    "regulation": 6,
+    "community_hot": 0
   },
   "items": [
     {
       "id": "1",
-      "title": "直播预告：未来两三年，哪些工业AI场景会率先爆发？",
-      "summary": "从真实工厂到产品复制，再到生态和下一批机会，两位嘉宾会把工业AI从「能用」走向「规模化」的关键问题一层层拆开。",
-      "detail": "从真实工厂到产品复制，再到生态和下一批机会，两位嘉宾会把工业AI从「能用」走向「规模化」的关键问题一层层拆开。 来源：量子位。",
-      "url": "https://www.qbitai.com/2026/09/494420.html",
-      "source": "量子位",
-      "category": "community_hot",
-      "tags": [
-        "AI"
-      ],
-      "heat": 3,
-      "date": "2026-09-23"
-    },
-    {
-      "id": "2",
-      "title": "讲真，我没看出这图是AI做的，更没想到是国产AI做的",
-      "summary": "而且啊，这两张图片并非出自你以为的Image 2.5之手，实则是来自一个国产AI—— 正是我们之前称之为“今年WAIC最惊艳的图”背后的模型，来自商汤科技的SenseNova U1 Pro（下文简称U1 Pro）。 而这次是正式版上线，现在已经可以在商汤小浣熊平台上使用，API也已经开始向企业客户开放了。 不过有一说一，图生成的好只是一方面；生成后能不能继续改、直到达到可商用，同样也是现在AI生图",
-      "detail": "而且啊，这两张图片并非出自你以为的Image 2.5之手，实则是来自一个国产AI—— 正是我们之前称之为“今年WAIC最惊艳的图”背后的模型，来自商汤科技的SenseNova U1 Pro（下文简称U1 Pro）。 而这次是正式版上线，现在已经可以在商汤小浣熊平台上使用，API也已经开始向企业客户开放了。 不过有一说一，图生成的好只是一方面；生成后能不能继续改、直到达到可商用，同样也是现在AI生图圈里比较关注的一点。 首先是小浣熊这个平台，点击输入框下方的“一图读懂”，就可以选择U1 Pro模型了： 不过目前小浣熊平台仅支持复杂图片的生成，企业客户可以通过API或者SenseNova Studio体验多轮修改等功能。",
-      "url": "https://www.qbitai.com/2026/09/494263.html",
-      "source": "量子位",
+      "title": "OpenAI发布GPT-6 Sol与Luna：旗舰Astra能力下沉，价格直降50%",
+      "summary": "OpenAI于9月22日推出GPT-6 Sol和GPT-6 Luna两款新模型，距旗舰GPT-6 Astra发布不到三周。两款模型将Astra的核心能力带到更快、更便宜的产品线，定价大幅降低。",
+      "detail": "美东时间9月22日，OpenAI宣布推出GPT-6 Sol和GPT-6 Luna两款新模型。距离其号称全球最智能的旗舰模型GPT-6 Astra发布仅不到三周，OpenAI即快速补齐产品线。Sol定位为高性能平衡型，Luna定位为轻量高速型，两款模型均将Astra的部分核心能力下沉到更低价位。此次发布的核心看点之一是价格策略：OpenAI宣布GPT-6系列整体降价50%，试图通过性价比加速Astra能力在开发者和企业用户中的渗透。英伟达代码合并记录中已提前出现GPT-6 Sol的字样，表明其已被头部合作伙伴接入测试。",
+      "url": "http://m.toutiao.com/group/7688454539766170173/",
+      "source": "华尔街见闻 / 36氪",
       "category": "product_release",
       "tags": [
-        "AI"
-      ],
-      "heat": 5,
-      "date": "2026-09-23"
-    },
-    {
-      "id": "3",
-      "title": "基元律动韩凯：从多模型调度到反馈闭环，探索Agent持续进化",
-      "summary": "9月22日，在2026杭州云栖大会企业级Agent实践峰会上，基元律动联合创始人兼CTO韩凯发表演讲《从Harness到RSI飞轮》。",
-      "detail": "9月22日，在2026杭州云栖大会企业级Agent实践峰会上，基元律动联合创始人兼CTO韩凯发表演讲《从Harness到RSI飞轮》。 9月22日，在2026杭州云栖大会企业级Agent实践峰会上，基元律动联合创始人兼CTO韩凯发表演讲《从Harness到RSI飞轮》。他认为，多模型长期异构并存、算力资源多元供给，将成为大模型产业的长期结构。随着Agent承担越来越复杂的任务，如何组织不同模型，并将应用中的反馈转化为模型改进的依据，正在成为新的技术课题。 据国家数据局披露，2026年3月，我国日均Token调用量已超过140万亿，较2024年初增长超千倍。韩凯在分享中指出，一次复杂Agent任务往往涉及十余次乃至数十次模型调用。任务表现既取决于模型本身，也取决于支撑任务执行的系统能力，包括模型选择、工具调用与上下文管理等。",
-      "url": "https://www.qbitai.com/2026/09/494120.html",
-      "source": "量子位",
-      "category": "research_paper",
-      "tags": [
-        "Agent"
-      ],
-      "heat": 3,
-      "date": "2026-09-23"
-    },
-    {
-      "id": "4",
-      "title": "虎鲸文娱推出“鲸锐AI”影视制作与管理平台，打造文娱产业新基建",
-      "summary": "9月22日，在2026云栖大会「AI+文化传媒」技术发展论坛上，虎鲸文娱集团推出行业首个AI影视制作与管理平台“鲸锐AI”",
-      "detail": "9月22日，在2026云栖大会「AI+文化传媒」技术发展论坛上，虎鲸文娱集团推出行业首个AI影视制作与管理平台“鲸锐AI” 来源：量子位。",
-      "url": "https://www.qbitai.com/2026/09/493865.html",
-      "source": "量子位",
-      "category": "product_release",
-      "tags": [
-        "AI"
-      ],
-      "heat": 3,
-      "date": "2026-09-23"
-    },
-    {
-      "id": "5",
-      "title": "OpenAI 发布 GPT-6 Sol 和 Luna；传字节跳动豆包收缩对话团队；千问发布 AI 手机全栈解决方案 | 极客早知道",
-      "summary": "OpenAI 发布 GPT-6 Sol 和 Luna 模型，API 价格大降 50% 9 月 23 日消息，OpenAI 今日发布 GPT-6 系列模型的最新成员 GPT-6 Sol 和 GPT-6 Luna。 OpenAI 官方表示，两款模型采用与 GPT-6 Astra 类似的方法进行训练，将 Astra 在专业工作、事实性、编码、计算机使用和对齐等方面最先进的性能带入更快、更经济的模型。 G",
-      "detail": "OpenAI 发布 GPT-6 Sol 和 Luna 模型，API 价格大降 50% 9 月 23 日消息，OpenAI 今日发布 GPT-6 系列模型的最新成员 GPT-6 Sol 和 GPT-6 Luna。 OpenAI 官方表示，两款模型采用与 GPT-6 Astra 类似的方法进行训练，将 Astra 在专业工作、事实性、编码、计算机使用和对齐等方面最先进的性能带入更快、更经济的模型。 GPT-6 Sol 和 Luna 模型的 API 价格相比 GPT-5.6 促销价降低 50%。不过 OpenAI 官方也表示，GPT-6 Astra 依然是其整体上最优秀的模型，如果你想要最佳效果和无 来源：极客公园。",
-      "url": "http://www.geekpark.net/news/370829",
-      "source": "极客公园",
-      "category": "product_release",
-      "tags": [
-        "AI",
         "OpenAI",
         "GPT",
-        "训练",
-        "编码"
-      ],
-      "heat": 5,
-      "date": "2026-09-23"
-    },
-    {
-      "id": "6",
-      "title": "Meta 个人 AI 助手刚火 13 天，Amazon 就拉闸了",
-      "summary": "9 月 21 日，一条弹窗开始出现在试图用 Meta Muse 在 Amazon 上购物的用户屏幕上：「未经授权的 AI Agent 继续访问，将违反 Amazon 使用条款。」 这距离 Muse 正式上线，仅仅过了 13 天。 Meta 推出的个人 AI 助手 Muse 最近爆火｜图片来源：Meta Meta 在 9 月 8 日发布了 Muse，把它定义为「全球第一款，为所有人打造的个人 AI ",
-      "detail": "9 月 21 日，一条弹窗开始出现在试图用 Meta Muse 在 Amazon 上购物的用户屏幕上：「未经授权的 AI Agent 继续访问，将违反 Amazon 使用条款。」 这距离 Muse 正式上线，仅仅过了 13 天。 Meta 推出的个人 AI 助手 Muse 最近爆火｜图片来源：Meta Meta 在 9 月 8 日发布了 Muse，把它定义为「全球第一款，为所有人打造的个人 AI Agent」。和 ChatGPT、Claude 这些聊天机器人不同，Muse 不只是回答问题，它能打开浏览器、登录你的邮箱、填表格、订机票，甚至直接替你下单买东西。 效果立竿见影，Sensor Tow 来源：极客公园。",
-      "url": "http://www.geekpark.net/news/370797",
-      "source": "极客公园",
-      "category": "product_release",
-      "tags": [
-        "AI",
-        "Meta",
-        "Agent"
-      ],
-      "heat": 5,
-      "date": "2026-09-23"
-    },
-    {
-      "id": "7",
-      "title": "黄仁勋：AI 时代，企业应该尽可能多付薪酬；宇树科技发布 Dex5-S 灵巧手；OpenAI 新模型 24 天解决 100+ 世界级数学难题 | 极客早知道",
-      "summary": "消息称华为 Mate 90 系列年度旗舰手机将在 9 月 29 日发布 9 月 21 日消息，昨日早些时候，华为常务董事、产品投资评审委员会主任、终端 BG 董事长余承东刚刚宣布，智界 RX 及鸿蒙智行新品发布会定档 9 月 28 日 14:30 举行。 根据此前爆料，华为 Mate 90 系列手机也将在本月发布，但遗憾的是，今天华为并未官宣这款年度旗舰的发布会时间。但博主 @熠熠玩数码 透露，M",
-      "detail": "消息称华为 Mate 90 系列年度旗舰手机将在 9 月 29 日发布 9 月 21 日消息，昨日早些时候，华为常务董事、产品投资评审委员会主任、终端 BG 董事长余承东刚刚宣布，智界 RX 及鸿蒙智行新品发布会定档 9 月 28 日 14:30 举行。 根据此前爆料，华为 Mate 90 系列手机也将在本月发布，但遗憾的是，今天华为并未官宣这款年度旗舰的发布会时间。但博主 @熠熠玩数码 透露，Mate 90 系列发布会将在 9 月 29 日 14:30 举行。（来源：IT 之家） 英伟达员工平均年薪 28.2 万美元，黄仁勋喊话企业「尽可能多付薪酬」 英伟达 CEO 黄仁勋近日接受 CBS  来源：极客公园。",
-      "url": "http://www.geekpark.net/news/370768",
-      "source": "极客公园",
-      "category": "product_release",
-      "tags": [
-        "AI",
-        "OpenAI"
-      ],
-      "heat": 5,
-      "date": "2026-09-23"
-    },
-    {
-      "id": "8",
-      "title": "Figure AI 宣称找到了机器人版 scaling law，同行却说它其实根本不会泛化",
-      "summary": "作者｜Li Yuan 390 亿美元的 Figure AI 已经把机器人送进 30 个陌生家庭，同行却说失败一半还谈不上会干活 「这是 Figure AI 成立以来最重要的项目。」 在 Helix 2.5 的发布视频里，Figure AI 创始人 Brett Adcock 把话说得很满。 Figure AI 目前估值达到 390 亿美元，是全球最贵的未上市人形机器人公司，致力于以人形完成人类的日常",
-      "detail": "作者｜Li Yuan 390 亿美元的 Figure AI 已经把机器人送进 30 个陌生家庭，同行却说失败一半还谈不上会干活 「这是 Figure AI 成立以来最重要的项目。」 在 Helix 2.5 的发布视频里，Figure AI 创始人 Brett Adcock 把话说得很满。 Figure AI 目前估值达到 390 亿美元，是全球最贵的未上市人形机器人公司，致力于以人形完成人类的日常任务。 过去几代 Helix 的发布都留下了颇有记忆点的画面：两台机器人合作拉平被子，或者在腾不出手时用屁股顶上洗碗机。不过，此前的 Helix 虽然已经能够自主工作，收获的最大诟病之一就是，每次的  来源：极客公园。",
-      "url": "http://www.geekpark.net/news/370607",
-      "source": "极客公园",
-      "category": "product_release",
-      "tags": [
-        "AI",
-        "机器人"
-      ],
-      "heat": 5,
-      "date": "2026-09-23"
-    },
-    {
-      "id": "9",
-      "title": "卢伟冰谈小米18 Pro涨价：大家会觉得合理；剪映发布 Hub 及 AI 助手「小映」；苹果或 10 月推出智能家居设备｜极客早知道",
-      "summary": "B 站上线 AI 无限竞技场测评榜：GPT-6 Astra 现居榜首 9 月 20 日，B 站宣布上线「AI 无限竞技场」大模型测评榜，并同步公布了首轮模型排行榜。据 B 站介绍，「AI 无限竞技场」是一个汇集了 B 站 UP 主 AI 大模型测评的竞技广场，由各领域 UP 主对上百个大模型的真实场景实测构成，涵盖代码、推理、协作、知识等多种测评主题。 其中 GPT-6 Astra 在 10 个 ",
-      "detail": "B 站上线 AI 无限竞技场测评榜：GPT-6 Astra 现居榜首 9 月 20 日，B 站宣布上线「AI 无限竞技场」大模型测评榜，并同步公布了首轮模型排行榜。据 B 站介绍，「AI 无限竞技场」是一个汇集了 B 站 UP 主 AI 大模型测评的竞技广场，由各领域 UP 主对上百个大模型的真实场景实测构成，涵盖代码、推理、协作、知识等多种测评主题。 其中 GPT-6 Astra 在 10 个 UP 主测评中拿下榜首，打败 GLM-5.3 获得榜首次数冠军；前 5 名中，国产大模型占据 3 席。 不同于传统跑分评测，B 站 AI 无限竞技场不设主题或测评维度限制，来自各个分区的 UP 主们以 来源：极客公园。",
-      "url": "http://www.geekpark.net/news/370681",
-      "source": "极客公园",
-      "category": "product_release",
-      "tags": [
-        "AI",
-        "GPT",
-        "推理",
         "大模型"
       ],
       "heat": 5,
       "date": "2026-09-23"
     },
     {
-      "id": "10",
-      "title": "三体还没降临，是因为叶文洁没用上千问办公吗？",
-      "summary": "天文观测，或许大概是最容易让普通人产生浪漫想象的一类科学。 巨大的穹顶缓缓打开，镜筒转向几亿光年之外，一束用从宇宙深处赶来的微光落到探测器上。然后告诉人类，这里几百万年曾经出现过超新星、伽马暴、中子星合并&hellip;&hellip;研究的问题也从微观的重元素从何而来，覆盖到恒星如何死亡、极端物理条件下会发生什么。 但这些工作落到具体的天文望远镜使用时，日常却会变得琐碎而辛苦。 冬天夜长，国家天",
-      "detail": "天文观测，或许大概是最容易让普通人产生浪漫想象的一类科学。 巨大的穹顶缓缓打开，镜筒转向几亿光年之外，一束用从宇宙深处赶来的微光落到探测器上。然后告诉人类，这里几百万年曾经出现过超新星、伽马暴、中子星合并&hellip;&hellip;研究的问题也从微观的重元素从何而来，覆盖到恒星如何死亡、极端物理条件下会发生什么。 但这些工作落到具体的天文望远镜使用时，日常却会变得琐碎而辛苦。 冬天夜长，国家天文台兴隆观测基地一次值班经常要持续十几个小时。值班人员需要彻夜守着望远镜和控制软件，盯目标位置、天气和设备状态，调参数，排任务。地球在转，目标也在不断改变位置；云层、湿度、风速、月光都会影响观测；机械 来源：极客公园。",
-      "url": "http://www.geekpark.net/news/370667",
-      "source": "极客公园",
-      "category": "research_paper",
+      "id": "2",
+      "title": "Anthropic发布Claude Opus 5.5：性能持平Fable 5.1，成本降低40%",
+      "summary": "Anthropic于9月22日推出Claude Opus 5.5，在大多数工作任务上达到Claude Fable 5.1的水平，但运行成本比Opus 5低40%，上下文窗口扩展至100万Token。",
+      "detail": "Anthropic于9月22日正式发布Claude Opus 5.5。新模型在绝大多数工作负载上达到了上代高端模型Claude Fable 5.1的表现水平，而输入价格为每百万Token 4美元、输出20美元，较Opus 5降价20%，缓存读取价格更是下降60%至每百万Token 0.20美元。上下文窗口扩展至100万Token，最大输出128K，知识截止日期为2026年6月。在Terminal-Bench 4.0等编程和Agent基准测试中表现突出。此次定价策略显示Anthropic正通过性价比与OpenAI的GPT-6系列展开激烈竞争。",
+      "url": "https://www.anthropic.com/claude/opus",
+      "source": "Anthropic / AIToolsRecap",
+      "category": "product_release",
       "tags": [
-        "千问"
+        "Anthropic",
+        "Claude",
+        "大模型"
       ],
       "heat": 5,
+      "date": "2026-09-23"
+    },
+    {
+      "id": "3",
+      "title": "马斯克旗下SpaceXAI发布Grok 4.7：编程与知识工作新旗舰",
+      "summary": "SpaceXAI于9月21日正式发布Grok 4.7模型，每百万Token输入定价2美元，支持50万Token上下文，已在GitHub Copilot中上线。",
+      "detail": "当地时间9月21日，马斯克旗下SpaceXAI正式发布Grok 4.7模型。新模型定位为编程与知识工作的旗舰级模型，输入定价为每百万Token 2美元、输出6美元，支持50万Token上下文窗口，支持文本和图像输入、文本输出。发布次日，GitHub Copilot即宣布已集成Grok 4.7，用户可在Copilot中直接切换使用。Grok 4.7的发布标志着xAI在模型能力上进一步追赶OpenAI和Anthropic，2美元的输入定价在同级别模型中极具竞争力。",
+      "url": "https://github.blog/changelog/2026-09-21-grok-4-7-is-now-available-in-github-copilot/",
+      "source": "GitHub Blog / 界面新闻",
+      "category": "product_release",
+      "tags": [
+        "OpenAI",
+        "大模型",
+        "编程"
+      ],
+      "heat": 5,
+      "date": "2026-09-23"
+    },
+    {
+      "id": "4",
+      "title": "小米开源万亿参数全模态模型MiMo-V2.6，直播训练过程",
+      "summary": "小米于9月22日发布并开源Xiaomi MiMo-V2.6-Pro（1.02万亿参数，42B激活）及Flash高效推理版本，同步上线桌面客户端，训练过程全程公开直播。",
+      "detail": "9月22日，小米正式发布并开源全新一代MiMo大模型系列：全模态旗舰模型MiMo-V2.6-Pro拥有1.02万亿总参数、42B激活参数，采用MoE架构；同步发布的还有高效推理模型MiMo-V2.6-Flash。同时上线了V2.6-Pro的超高速模式Ultraspeed以及MiMo Desktop桌面客户端正式版。小米罕见地在公开仪表盘上全程直播了训练过程，展示了模型训练的完整技术细节。作为又一家宣布开源万亿参数模型的中国厂商，小米此举进一步加剧了开源大模型赛道的竞争。",
+      "url": "https://sharedsapience.com/century-report/the-century-report-september-22-2026/",
+      "source": "搜狐 / Shared Sapience",
+      "category": "opensource",
+      "tags": [
+        "开源",
+        "大模型",
+        "小米"
+      ],
+      "heat": 5,
+      "date": "2026-09-23"
+    },
+    {
+      "id": "5",
+      "title": "德国等20国与欧盟联合声明：AI必须始终处于人类控制之下",
+      "summary": "9月22日，德国、芬兰、澳大利亚、加拿大、新加坡等20国与欧盟发表联合声明，呼吁国际合作确保AI发展符合国际法，始终处于人类指导和控制下。",
+      "detail": "9月22日，来自全球的20个国家（包括德国、芬兰、澳大利亚、巴林、加拿大、丹麦、爱沙尼亚、冰岛、爱尔兰、哈萨克斯坦、新加坡、西班牙、南非、阿联酋等）与欧盟共同发表联合声明，呼吁各国政府和业界立即采取行动，确保人工智能的发展符合国际法，并始终处于人类的指导、监管和控制之下。声明强调要实现AI的潜力，需要产业界、政府和社会各方协同合作。此举是在OpenAI呼吁制定全球AI安全标准、Anthropic CEO Amodei发文呼吁放慢前沿模型开发节奏之后，国际监管层面的最新重大动向。",
+      "url": "https://news.ifeng.com/c/8wd5bNtK3re",
+      "source": "凤凰网",
+      "category": "regulation",
+      "tags": [
+        "AI安全",
+        "监管"
+      ],
+      "heat": 4,
+      "date": "2026-09-23"
+    },
+    {
+      "id": "6",
+      "title": "OpenAI成立数学与AI独立顾问组，回应数学家公开信",
+      "summary": "OpenAI于9月21日宣布成立数学与AI顾问组，独立运作，回应此前数学家们关于AI数学能力透明度的公开信。",
+      "detail": "当地时间9月21日，OpenAI宣布正在成立一个独立运作的数学与AI顾问组。此举是对此前一批数学家发表公开信、要求AI实验室提高模型数学能力透明度并接受独立审查的回应。顾问组将独立于OpenAI日常运营，负责评估AI模型在数学推理和形式化证明方面的能力。同期，OpenAI还发布了Australian Youth Safety Blueprint，推出Astra for Law法律服务产品，并宣布Paul Christiano加入OpenAI Foundation董事会及其安全与安保委员会。",
+      "url": "http://m.163.com/dy/article/L7GE9I2I0534A4SC.html",
+      "source": "界面新闻 / 网易",
+      "category": "regulation",
+      "tags": [
+        "OpenAI",
+        "AI安全",
+        "监管"
+      ],
+      "heat": 4,
+      "date": "2026-09-23"
+    },
+    {
+      "id": "7",
+      "title": "OpenAI内部秘密开发对标Grok Bot的AI助手，代号Aeon",
+      "summary": "据The Information爆料，OpenAI正在开发直接对标马斯克Grok Bot的个人AI助手功能，内部代号Aeon（希腊语永恒之意），在AI替人干活赛道上从领跑者变为追赶者。",
+      "detail": "据The Information报道，OpenAI正在开发更直接对标马斯克Grok Bot的功能。爆料博主Tibor Blaho转发了记者Stephanie Palazzolo的帖子，揭示了该项目内部代号为Aeon。报道指出，在AI替人操作浏览器/桌面这一赛道上，OpenAI曾凭借Operator和ChatGPT（周活已突破10亿）占据领先位置，但马斯克的Grok Bot和扎克伯格的Muse近期接连爆发，Muse更是冲上App Store榜首。OpenAI此次被定位为追赶者，显示个人AI助手赛道的竞争正在急剧升温。",
+      "url": "http://m.toutiao.com/group/7688322833621025335/",
+      "source": "36氪 / The Information",
+      "category": "product_release",
+      "tags": [
+        "OpenAI",
+        "Agent"
+      ],
+      "heat": 4,
+      "date": "2026-09-23"
+    },
+    {
+      "id": "8",
+      "title": "阿里云栖大会：吴泳铭宣布千问将训练5-10万亿参数新模型",
+      "summary": "在2026杭州云栖大会上，阿里巴巴CEO吴泳铭表示阿里将坚定投入AI模型、AI芯片、AI云三大基石，千问将训练5-10万亿参数规模的新模型。",
+      "detail": "9月22日，2026杭州云栖大会开幕，主题为智以致用。阿里巴巴CEO吴泳铭在会上表示，机器智能时代阿里将坚定投入AI模型、AI芯片、AI云三大基石。吴泳铭透露，千问（Qwen）团队将训练5-10万亿参数规模的新一代模型。大会现场以Agentic AI为核心，串联起芯片、云基础设施、模型能力与Agent应用的完整链路，超节点真机展台、AI眼镜和智能体电脑等硬件产品备受关注。阿里同时发布了全模态生成模型路线图，预计三年内出现原生全模态统一生成模型。",
+      "url": "https://www.qbitai.com/",
+      "source": "量子位 / 中国证券报",
+      "category": "product_release",
+      "tags": [
+        "大模型",
+        "开源"
+      ],
+      "heat": 4,
+      "date": "2026-09-23"
+    },
+    {
+      "id": "9",
+      "title": "Figure AI宣称找到机器人Scaling Law，同行批评其无法泛化",
+      "summary": "估值390亿美元的Figure AI发布Helix 2.5，宣称找到机器人版scaling law，已将机器人送入30个陌生家庭，但同行指出失败率仍高、谈不上真正干活。",
+      "detail": "估值390亿美元的人形机器人公司Figure AI发布Helix 2.5模型，创始人Brett Adcock称这是公司成立以来最重要的项目。Figure AI声称已将机器人部署到30个陌生家庭进行测试，并宣称找到了机器人领域的scaling law。然而同行批评指出，测试中约一半任务失败，机器人距离真正自主干活还有很大差距。此前Helix系列曾因两台机器人合作拉被子、用屁股顶洗碗机等画面出圈，但批评者认为这些是精心设计的演示而非真实泛化能力。Figure AI是全球估值最高的未上市人形机器人公司。",
+      "url": "http://www.geekpark.net/news/370607",
+      "source": "极客公园 / 量子位",
+      "category": "research_paper",
+      "tags": [
+        "机器人",
+        "AI"
+      ],
+      "heat": 4,
+      "date": "2026-09-23"
+    },
+    {
+      "id": "10",
+      "title": "工信部联合20多家单位发布Agent时代「可靠AI」测评体系",
+      "summary": "在2026人工智能计算大会上，工信部电子五所联合智源研究院、浪潮信息、百度、阿里等20多家单位发布面向Agent时代的可靠AI测评体系。",
+      "detail": "9月22日，在2026人工智能计算大会（AICC2026）上，工业和信息化部电子第五研究所联合北京智源研究院、浪潮信息、摩尔线程、沐曦股份、北京开源芯片研究院、百度智能云、阿里云等20多家产业链单位，正式发布面向Agent时代的可靠AI测评体系。该体系聚焦智能体应用带来的新能力和新风险，旨在为Agent系统的可靠性和安全性提供行业标准。此举标志着中国在AI Agent标准化和治理方面迈出重要一步。",
+      "url": "http://m.toutiao.com/group/7688277495937909287/",
+      "source": "新京报",
+      "category": "regulation",
+      "tags": [
+        "监管",
+        "Agent"
+      ],
+      "heat": 4,
       "date": "2026-09-23"
     },
     {
       "id": "11",
-      "title": "不可逆的人类衰老，快被 AI 破解了",
-      "summary": "作者｜Li Yuan 编辑｜郑玄 &nbsp; 2026 年 9 月，42 个平均 67 岁的人，在六只不同的时钟上同时变年轻了。 这些时钟不在墙上，而在他们的血液里。 服用一种名叫 rentosertib 的药物四周后，患者体内近 3000 种蛋白被检测，其中 326 种发生显著变化。六套由不同团队开发的模型都认为，他们的身体正在朝更年轻的方向移动。 多数时钟倒退了 3 到 4 年。其中一只，倒",
-      "detail": "作者｜Li Yuan 编辑｜郑玄 &nbsp; 2026 年 9 月，42 个平均 67 岁的人，在六只不同的时钟上同时变年轻了。 这些时钟不在墙上，而在他们的血液里。 服用一种名叫 rentosertib 的药物四周后，患者体内近 3000 种蛋白被检测，其中 326 种发生显著变化。六套由不同团队开发的模型都认为，他们的身体正在朝更年轻的方向移动。 多数时钟倒退了 3 到 4 年。其中一只，倒退了接近 6 年。 更不可思议的是，这款药是 AI 做出来的。 它来自英矽智能，一家已经登陆港交所、也是目前全球临床进展最快的 AI 制药公司之一。AI 帮助它从海量生物数据中找到靶点，再设计出能够作 来源：极客公园。",
-      "url": "http://www.geekpark.net/news/370664",
-      "source": "极客公园",
-      "category": "research_paper",
+      "title": "Cognition AI完成20亿美元融资，AI编程赛道持续火热",
+      "summary": "AI编程公司Cognition在9月上旬完成20亿美元融资，与The Boring Company（30亿）等共同占据了当周VC资金的绝大部分。",
+      "detail": "据The CODEW统计，9月前10天内有6家AI公司吸收了超过80亿美元风险投资，其中Cognition（AI编程，20亿美元）、The Boring Company（30亿美元）、Positron AI（8.75亿美元）等排名前列。AI行业占当月VC融资总额的86%，资金高度集中在头部少数公司。Cognition以其AI软件工程师Devin闻名，此次大额融资显示市场对AI编程赛道持续看好。",
+      "url": "https://www.thecodew.com/2026/09/ai-vc-funding-86-percent-6-companies-8b.html",
+      "source": "The CODEW",
+      "category": "funding",
       "tags": [
+        "融资",
+        "编程",
         "AI"
       ],
-      "heat": 5,
+      "heat": 4,
       "date": "2026-09-23"
     },
     {
       "id": "12",
-      "title": "传折叠屏 iPhone 维修费 8000 元，苹果：价格未公布；腾讯 Chatterfly 输入法开启内测；软高管：AI 训练是「人类历史上最大规模的劳动盗窃」｜极客早知道",
-      "summary": "谷歌最新旗舰模型 Gemini 4 Pro 疑似「偷跑」，多项指标领先 Astra 和 Fable 5.1 9 月 18 日，Google 下一代旗舰模型 Gemini 4 Pro 疑似正以「gemini-3.8-flash」名称「偷跑」上线。据反馈，谷歌在 Arena 等基准平台上测试了其最强 Gemini 4 Pro 模型，内部开发代号为 Argon。 网上流传的一张测试图显示，该模型在智能体",
-      "detail": "谷歌最新旗舰模型 Gemini 4 Pro 疑似「偷跑」，多项指标领先 Astra 和 Fable 5.1 9 月 18 日，Google 下一代旗舰模型 Gemini 4 Pro 疑似正以「gemini-3.8-flash」名称「偷跑」上线。据反馈，谷歌在 Arena 等基准平台上测试了其最强 Gemini 4 Pro 模型，内部开发代号为 Argon。 网上流传的一张测试图显示，该模型在智能体编程测试 DeepSWE v1.1 中得分超过 88%，在 Terminal-bench 2.1 和 OSWorld 2.0 中分别获得 95.3%和 86.8%的成绩，高于 GPT-6 Astra  来源：极客公园。",
-      "url": "http://www.geekpark.net/news/370608",
-      "source": "极客公园",
-      "category": "product_release",
+      "title": "Crusoe完成39亿美元F轮融资，估值达309亿美元",
+      "summary": "AI算力基础设施公司Crusoe于9月17日宣布完成39亿美元F轮首轮交割，估值309亿美元，专注为AI训练提供绿色算力。",
+      "detail": "AI算力基础设施公司Crusoe于9月17日宣布完成其备受期待的39亿美元F轮融资的首轮交割，估值达309亿美元。Crusoe专注于为大模型训练提供绿色能源驱动的数据中心，是AI基础设施热潮中的代表公司。同期，SK海力士也宣布成立SK hynix Ventures企业风投品牌，加码AI芯片和存储领域投资。AI算力赛道持续吸金。",
+      "url": "https://www.unite.ai/series/vpn/funding/",
+      "source": "Unite.AI",
+      "category": "funding",
       "tags": [
-        "AI",
-        "Google",
-        "Gemini",
-        "训练"
+        "融资",
+        "算力",
+        "芯片"
       ],
-      "heat": 5,
+      "heat": 3,
       "date": "2026-09-23"
     },
     {
       "id": "13",
-      "title": "TechCrunch Founder Summit’s agenda revealed: Unlock fundraising, hiring, and AI insights in Boston on November 4",
-      "summary": "Founders shouldn't have to learn the hardest lessons the hardest way. TechCrunch Founder Summit is designed to make the challenges of starting a company easier and the highs that much greater.",
-      "detail": "Founders shouldn't have to learn the hardest lessons the hardest way. TechCrunch Founder Summit is designed to make the challenges of starting a company easier and the highs that much greater. 来源：TechCrunch AI。",
-      "url": "https://techcrunch.com/2026/09/22/techcrunch-founder-summits-agenda-revealed-unlock-fundraising-hiring-and-ai-insights-in-boston-on-november-4/",
-      "source": "TechCrunch AI",
-      "category": "community_hot",
+      "title": "三星领投Mistral AI 30亿欧元D轮，估值超210亿欧元",
+      "summary": "法国AI公司Mistral AI完成30亿欧元D轮融资，由三星电子领投，估值超210亿欧元，资金将用于研发和算力扩展。",
+      "detail": "三星电子领投了法国AI公司Mistral AI的30亿欧元D轮融资，投后估值超过210亿欧元。此轮融资于9月8日宣布，资金将用于模型研发、计算能力扩展和国际市场扩张。Mistral作为欧洲最有代表性的开源大模型公司，此次获得三星战略投资，显示其在芯片+模型协同方向的布局。Anthropic同期传出放弃收购Decart的消息。",
+      "url": "https://kingy.ai/news/samsung-mistral-ai-3-billion-funding-round/",
+      "source": "Kingy AI / AI Brief",
+      "category": "funding",
       "tags": [
-        "AI"
+        "融资",
+        "开源",
+        "大模型"
       ],
-      "heat": 5,
+      "heat": 3,
       "date": "2026-09-23"
     },
     {
       "id": "14",
-      "title": "Snorkel AI triples valuation to $3.5B as demand for AI training data booms",
-      "summary": "The seven-year-old startup has raised a $350 million Series E to fuel its data-as-a-service approach.",
-      "detail": "The seven-year-old startup has raised a $350 million Series E to fuel its data-as-a-service approach. 来源：TechCrunch AI。",
-      "url": "https://techcrunch.com/2026/09/22/snorkel-ai-triples-valuation-to-3-5b-as-demand-for-ai-training-data-booms/",
-      "source": "TechCrunch AI",
-      "category": "funding",
+      "title": "MoneyPrinterTurbo GitHub星标突破12.3万，一键AI视频生成持续火爆",
+      "summary": "开源AI视频生成工具MoneyPrinterTurbo GitHub星标从8.4万飙升至12.3万，支持一键生成带配音、字幕的短视频，成为最热门AI视频工具之一。",
+      "detail": "开源项目MoneyPrinterTurbo在GitHub上的星标数突破12.3万，从早期快照的84,534星增长到11.4万再到12.3万，是GitHub上星标最高的AI视频生成工具之一。该项目支持一键输入主题即可自动完成素材搜索、配音生成、字幕添加和视频合成，极大降低了短视频制作门槛。同期GitHub Trending上AI Agent和LLM工具类项目占据主导地位，包括AI视频剪辑工具AutoClip等也获得大量关注。",
+      "url": "https://www.notatechguy.com/moneyprinterturbo-hits-123-000-github-stars-with-one-click-ai-video-pitch/",
+      "source": "GitHub Trending / NotATechGuy",
+      "category": "opensource",
       "tags": [
+        "开源",
+        "GitHub",
         "AI"
       ],
-      "heat": 4,
+      "heat": 3,
       "date": "2026-09-23"
     },
     {
       "id": "15",
-      "title": "Qualcomm launches two new smartphone chips with emphasis on AI",
-      "summary": "Qualcomm said that its new top chip can run 30B mixture-of-expert model locally.",
-      "detail": "Disrupt 2026: OpenAI, Anthropic, Replit, and more take over 6 industry stages. 25% off tickets now Disrupt ticket savings of up to $200 + 50% off a second ends Sept 25, 11:59 p.m. PT. REGISTER HERE.",
-      "url": "https://techcrunch.com/2026/09/22/qualcomm-launches-two-new-smartphone-chips-with-emphasis-on-ai/",
-      "source": "TechCrunch AI",
-      "category": "product_release",
+      "title": "欧盟AI法案进入全面执法阶段，三国监管机构同步入场",
+      "summary": "9月11日欧盟宣布AI法案全面执行，来自三个国家的监管机构正式启动执法，高风险AI系统合规窗口已关闭。",
+      "detail": "9月11日，欧盟宣布AI法案（AI Act）进入全面执法阶段，来自三个欧盟国家的监管机构正式启动执法行动，针对高风险AI系统的合规审查窗口已经关闭。根据AI法案时间表，多数透明度义务自2026年8月2日起适用，情绪识别和生物识别分类系统的部署者必须告知受影响人员。已上市系统的标记义务过渡期至2026年12月2日。这是全球首部全面性AI法规进入实质执法阶段。",
+      "url": "https://www.winzheng.com/en/article/eu-ai-act-enforcement-september-2026-high-risk-audit",
+      "source": "赢政天下 / AI Law Wiki",
+      "category": "regulation",
       "tags": [
-        "AI"
+        "监管",
+        "AI安全"
       ],
-      "heat": 4,
+      "heat": 3,
       "date": "2026-09-23"
     },
     {
       "id": "16",
-      "title": "OpenAI launches GPT-6 Sol and Luna, boasting lower cost and fewer mistakes",
-      "summary": "OpenAI is launching two new models, which it says are cut from the same cloth as Astra.",
-      "detail": "Disrupt 2026: OpenAI, Anthropic, Replit, and more take over 6 industry stages. 25% off tickets now Disrupt ticket savings of up to $200 + 50% off a second ends Sept 25, 11:59 p.m. PT. REGISTER HERE.",
-      "url": "https://techcrunch.com/2026/09/22/openai-launches-gpt-6-sol-and-luna/",
-      "source": "TechCrunch AI",
-      "category": "product_release",
+      "title": "加州州长Newsom签署行政令：要求前沿AI模型配备Kill Switch",
+      "summary": "加州州长Newsom签署行政令，推进前沿AI模型的独立验证和Kill Switch机制，加速建立AI安全独立监管框架。",
+      "detail": "加州州长Gavin Newsom于9月18日签署新行政令，加速推进前沿AI模型的独立AI监督框架。该行政令要求建立AI验证组织和AI审计师注册机制，并推动前沿AI模型配备可远程关停的Kill Switch。此举是在加州此前通过的AI安全、网络安全、隐私和儿童在线安全综合法案基础上的进一步强化。行政令回应了近期AI行业领袖关于放慢AI开发节奏、加强政府安全监管的呼声。",
+      "url": "https://statescoop.com/newsom-moves-to-speed-up-independent-ai-oversight-in-california-with-new-executive-order/",
+      "source": "StateScoop / Unite.AI",
+      "category": "regulation",
       "tags": [
-        "AI",
-        "OpenAI",
-        "GPT"
+        "监管",
+        "AI安全"
       ],
-      "heat": 5,
+      "heat": 3,
       "date": "2026-09-23"
     },
     {
       "id": "17",
-      "title": "Anthropic releases Opus 5.5 with lower prices and Fable-level performance",
-      "summary": "Anthropic called it \"the strongest-performing model we've tested to date.\"",
-      "detail": "Disrupt 2026: OpenAI, Anthropic, Replit, and more take over 6 industry stages. 25% off tickets now Disrupt ticket savings of up to $200 + 50% off a second ends Sept 25, 11:59 p.m. PT. REGISTER HERE. Anthropic releases Opus 5.5 with lower prices and Fable-level performance Russell Brandom 9:30 AM PDT · September 22, 2026 Anthropic&#8217;s newest model, Opus 5.",
-      "url": "https://techcrunch.com/2026/09/22/anthropic-releases-opus-5-5-with-lower-prices-and-fable-level-performance/",
-      "source": "TechCrunch AI",
-      "category": "product_release",
+      "title": "阿里发布全模态模型路线图：三年内实现原生全模态统一生成",
+      "summary": "阿里云栖大会上阿里宣布，三年内将出现原生全模态统一生成模型，未来体验不再受限于模态边界。",
+      "detail": "在2026云栖大会上，阿里展示了其全模态AI模型路线图。阿里方面表示，三年之内将出现一个原生的全模态统一生成模型，未来的AI生成体验将不再受限于文本、图像、视频、音频等模态边界。同期，商汤科技SenseNova U1 Pro正式版上线，支持多轮图像修改；Meta发布开源Agent设计系统Astryx；B站上线AI无限竞技场大模型测评榜，GPT-6 Astra现居榜首。",
+      "url": "https://www.qbitai.com/2026/09/494429.html",
+      "source": "量子位",
+      "category": "research_paper",
       "tags": [
-        "Anthropic"
+        "多模态",
+        "大模型"
       ],
-      "heat": 5,
+      "heat": 3,
       "date": "2026-09-23"
     },
     {
       "id": "18",
-      "title": "AstroForge is putting AI in command of its next spacecraft",
-      "summary": "Autonomy-1 will have a small, transformer-based AI model taking charge of a space probe.",
-      "detail": "Disrupt 2026: OpenAI, Anthropic, Replit, and more take over 6 industry stages. 25% off tickets now Disrupt ticket savings of up to $200 + 50% off a second ends Sept 25, 11:59 p.m. PT. REGISTER HERE. AstroForge is putting AI in command of its next spacecraft Tim Fernholz 8:00 AM PDT · September 22, 2026 Fly to an asteroid, land on it, make no mistakes: If only it were that easy.",
-      "url": "https://techcrunch.com/2026/09/22/astroforge-is-putting-ai-in-command-of-its-next-spacecraft/",
-      "source": "TechCrunch AI",
-      "category": "community_hot",
+      "title": "智谱完成约50亿美元融资，加码下一代GLM与完全自训练",
+      "summary": "智谱于9月13日宣布完成约50亿美元融资，资金将用于下一代GLM基础模型、完全自训练体系及算力基础设施。",
+      "detail": "9月13日，智谱宣布完成约50亿美元融资。公告称此次融资将用于下一代GLM基础模型研发、完全自训练体系建设以及相关算力基础设施。智谱将完全自训练描述为下一代模型训练的关键方向。同期，快手旗下可灵AI完成204亿元融资，其中国家人工智能产业投资基金出资14亿元入股，投后估值约1228亿元。国内AI大模型赛道融资持续火热。",
+      "url": "https://finance.eastmoney.com/a/202609143872952767.html",
+      "source": "东方财富 / 界面新闻",
+      "category": "funding",
       "tags": [
-        "AI"
+        "融资",
+        "大模型"
       ],
-      "heat": 4,
+      "heat": 3,
       "date": "2026-09-23"
     },
     {
       "id": "19",
-      "title": "Five AI safety sessions every founder should have on their TechCrunch Disrupt 2026 agenda",
-      "summary": "At TechCrunch Disrupt 2026, five sessions across the AI Stage and Real World AI Stage cover AI safety, featuring leaders from Anthropic, Nvidia, AWS, Waabi, and more. Register before September 25 to s",
-      "detail": "At TechCrunch Disrupt 2026, five sessions across the AI Stage and Real World AI Stage cover AI safety, featuring leaders from Anthropic, Nvidia, AWS, Waabi, and more. Register before September 25 to save up to $200. 来源：TechCrunch AI。",
-      "url": "https://techcrunch.com/2026/09/22/five-ai-safety-sessions-every-founder-should-have-on-their-techcrunch-disrupt-2026-agenda/",
-      "source": "TechCrunch AI",
-      "category": "opensource",
+      "title": "高通发布新一代手机AI芯片，端侧AI推理能力大幅提升",
+      "summary": "高通推出新一代智能手机芯片，端侧AI推理性能显著提升，支持更大参数模型在手机端运行。",
+      "detail": "高通在本周发布了新一代智能手机芯片，针对端侧AI推理进行了重点优化。新芯片支持更大参数规模的模型直接在手机本地运行，无需云端连接。这一进展与同期讨论的Agent时代CPU价值重估话题相呼应——随着AI Agent在终端设备上的部署需求增长，CPU与GPU的配比正趋近1:1，端侧AI推理能力成为手机芯片竞争的新焦点。",
+      "url": "http://www.geekpark.net/news/370768",
+      "source": "极客公园",
+      "category": "product_release",
       "tags": [
-        "AI",
-        "Anthropic",
-        "NVIDIA"
+        "芯片",
+        "AI"
       ],
-      "heat": 5,
+      "heat": 3,
       "date": "2026-09-23"
     },
     {
       "id": "20",
-      "title": "TechCrunch Disrupt 2026: Aaron Edsinger brings Hello Robot’s Stretch 4 to life onstage",
-      "summary": "Hello Robot CEO and co-founder Aaron Edsinger will bring Stretch 4 for a live demo on the Real World AI Stage at TechCrunch Disrupt 2026. Register before September 25 to save up to $200, plus get a se",
-      "detail": "Hello Robot CEO and co-founder Aaron Edsinger will bring Stretch 4 for a live demo on the Real World AI Stage at TechCrunch Disrupt 2026. Register before September 25 to save up to $200, plus get a second pass at 50% off. 来源：TechCrunch AI。",
-      "url": "https://techcrunch.com/2026/09/22/techcrunch-disrupt-2026-aaron-edsinger-brings-hello-robots-stretch-4-to-life-onstage/",
-      "source": "TechCrunch AI",
-      "category": "community_hot",
+      "title": "美国FTC发布AI自动化决策系统规则草案",
+      "summary": "美国联邦贸易委员会（FTC）于9月发布AI工作流规则草案，针对自动化决策系统提出透明度和问责要求。",
+      "detail": "美国联邦贸易委员会（FTC）于9月发布了针对自动化决策系统的AI工作流规则草案。AI治理顾问Priya Sethi表示，企业需要立即建立合乎伦理、透明的AI工作流。草案要求使用AI自动化决策的企业承担透明度义务和问责责任。同期，英国政府表态不会全面禁止超级智能AI，但保留对特定高风险场景实施定向监管的可能性；美国众议院小组也推进了多项AI和供应链相关法案。",
+      "url": "https://techdailyshot.com/blog/ftc-september-2026-draft-ai-workflow-rules",
+      "source": "Tech Daily Shot / Simmons & Simmons",
+      "category": "regulation",
       "tags": [
-        "AI"
+        "监管",
+        "AI安全"
       ],
-      "heat": 5,
+      "heat": 3,
       "date": "2026-09-23"
     }
   ]
