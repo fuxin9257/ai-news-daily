@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <!-- ===== 顶部导航 ===== -->
   <header class="site-header">
     <div class="container header-inner">
       <div class="brand">
@@ -33,20 +34,28 @@
     </div>
   </header>
 
+  <!-- ===== 日期选择栏 ===== -->
   <nav class="date-nav">
     <div class="container">
-      <div class="stats-bar" id="statsBar"></div>
-      <div class="date-selector" id="dateSelector"></div>
+      <div class="stats-bar" id="statsBar">
+        <!-- 统计信息由JS动态生成 -->
+      </div>
+      <div class="date-selector" id="dateSelector">
+        <!-- 日期按钮由JS动态生成 -->
+      </div>
     </div>
   </nav>
 
+  <!-- ===== 筛选栏 ===== -->
   <section class="filter-bar">
     <div class="container filter-inner">
       <div class="search-box">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
         <input type="text" id="searchInput" placeholder="搜索新闻标题、标签、来源..." aria-label="搜索新闻">
       </div>
-      <div class="category-filters" id="categoryFilters"></div>
+      <div class="category-filters" id="categoryFilters">
+        <!-- 分类筛选由JS动态生成 -->
+      </div>
       <div class="heat-filter">
         <span class="filter-label">热度</span>
         <select id="heatFilter" aria-label="按热度筛选">
@@ -59,32 +68,43 @@
     </div>
   </section>
 
+  <!-- ===== 主内容区 ===== -->
   <main class="main-content">
     <div class="container main-grid">
+      <!-- 新闻列表 -->
       <div class="news-column">
         <div class="column-header">
           <h2 class="column-title" id="columnTitle">最新动态</h2>
           <span class="item-count" id="itemCount">0 条</span>
         </div>
-        <div class="news-list" id="newsList"></div>
+        <div class="news-list" id="newsList">
+          <!-- 新闻卡片由JS动态生成 -->
+        </div>
         <div class="empty-state" id="emptyState" style="display:none;">
           <p>没有找到匹配的新闻</p>
           <button class="btn-secondary" id="clearFilters">清除筛选条件</button>
         </div>
       </div>
 
+      <!-- 侧边栏 -->
       <aside class="sidebar" id="sidebar">
         <div class="sidebar-section">
           <h3 class="sidebar-title">分类统计</h3>
-          <div class="category-stats" id="categoryStats"></div>
+          <div class="category-stats" id="categoryStats">
+            <!-- 由JS生成 -->
+          </div>
         </div>
         <div class="sidebar-section">
           <h3 class="sidebar-title">热门标签</h3>
-          <div class="tag-cloud" id="tagCloud"></div>
+          <div class="tag-cloud" id="tagCloud">
+            <!-- 由JS生成 -->
+          </div>
         </div>
         <div class="sidebar-section">
           <h3 class="sidebar-title">历史归档</h3>
-          <div class="archive-list" id="archiveList"></div>
+          <div class="archive-list" id="archiveList">
+            <!-- 由JS生成 -->
+          </div>
         </div>
         <div class="sidebar-section about-section">
           <h3 class="sidebar-title">关于</h3>
@@ -95,6 +115,7 @@
     </div>
   </main>
 
+  <!-- ===== 移动端悬浮菜单 ===== -->
   <div class="sidebar-overlay" id="sidebarOverlay"></div>
   <button class="fab-menu" id="fabMenu" aria-label="打开菜单">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -104,13 +125,15 @@
     </svg>
   </button>
 
+  <!-- ===== 页脚 ===== -->
   <footer class="site-footer">
     <div class="container footer-inner">
       <p>AI News Daily &mdash; 每日AI新闻聚合 | 数据仅供参考，所有内容版权归原作者所有</p>
     </div>
   </footer>
 
-  <script src="data/manifest.js"></script>
-  <script src="js/app.js"></script>
+  <!-- ===== 数据脚本 ===== -->
+  <script src="data/manifest.js?v=20260923"></script>
+  <script src="js/app.js?v=20260923"></script>
 </body>
 </html>
